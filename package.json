@@ -1,0 +1,11 @@
+{
+  "name": "cashwise-site",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./styles/tailwind.css -o ./assets/styles/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./styles/tailwind.css -o ./assets/styles/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

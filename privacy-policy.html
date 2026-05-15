@@ -9,85 +9,497 @@
       content="Privacy Policy for CashWise, the digital ledger and cash book app by Hicham-Dev."
     />
     <link rel="icon" type="image/png" href="assets/icons/playstore.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles/tailwind.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        color-scheme: light;
+        --brand-gradient: linear-gradient(135deg, #0b3b66 0%, #059669 55%, #38bdf8 100%);
+        --brand-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 246, 255, 0.88));
+      }
+
       body {
         font-family: "Inter", sans-serif;
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        background:
+          radial-gradient(circle at top left, rgba(5, 150, 105, 0.08), transparent 28%),
+          linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      }
+
+      .display-font {
+        font-family: "Sora", "Inter", sans-serif;
+      }
+
+      .nav-shell {
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7)),
+          linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(5, 150, 105, 0.08));
+        box-shadow: 0 22px 55px -34px rgba(15, 23, 42, 0.45);
+      }
+
+      .brand-mark {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(11, 59, 102, 0.1);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(219, 234, 254, 0.9));
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: auto -35% -45% auto;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 9999px;
+        background: rgba(56, 189, 248, 0.2);
+        filter: blur(10px);
+      }
+
+      .brand-title {
+        line-height: 1.05;
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .appbar-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 9999px;
+        padding: 0.55rem 0.95rem;
+        color: #334155;
+        transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+      }
+
+      .appbar-link::after {
+        content: "";
+        position: absolute;
+        left: 0.95rem;
+        right: 0.95rem;
+        bottom: 0.4rem;
+        height: 0.16rem;
+        transform: scaleX(0);
+        transform-origin: center;
+        border-radius: 9999px;
+        background: var(--brand-gradient);
+        transition: transform 180ms ease;
+      }
+
+      .appbar-link:hover,
+      .appbar-link.is-active {
+        color: #0b3b66;
+        background: rgba(255, 255, 255, 0.72);
+        transform: translateY(-1px);
+      }
+
+      .appbar-link:hover::after,
+      .appbar-link:focus-visible::after,
+      .appbar-link.is-active::after {
+        transform: scaleX(1);
+      }
+
+      .appbar-link:focus-visible {
+        outline: 2px solid rgba(56, 189, 248, 0.45);
+        outline-offset: 3px;
+      }
+
+      .mobile-appbar-link {
+        border: 1px solid transparent;
+        background: linear-gradient(135deg, rgba(248, 250, 252, 0.92), rgba(239, 246, 255, 0.82));
+        transition: border-color 180ms ease, color 180ms ease, transform 180ms ease, background-color 180ms ease;
+      }
+
+      .mobile-appbar-link:hover,
+      .mobile-appbar-link.is-active {
+        border-color: rgba(56, 189, 248, 0.25);
+        color: #0b3b66;
+        transform: translateX(4px);
+      }
+
+      .appbar-nav {
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .brand-subtitle {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #64748b;
+      }
+
+      .nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(11, 59, 102, 0.08);
+        background: var(--brand-surface);
+        padding: 0.5rem 0.85rem;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #0b3b66;
+      }
+
+      .nav-badge::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #059669, #38bdf8);
+      }
+
+      .nav-play-button {
+        box-shadow: 0 18px 35px -24px rgba(5, 150, 105, 0.85);
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(11, 59, 102, 0.1);
+        background: var(--brand-surface);
+        color: #0b3b66;
+        transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+      }
+
+      .theme-toggle:hover {
+        transform: translateY(-1px);
+        color: #0f172a;
+      }
+
+      .theme-toggle svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .theme-toggle .theme-icon-sun {
+        display: none;
+      }
+
+      .page-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(11, 59, 102, 0.12);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(219, 234, 254, 0.92));
+        padding: 0.45rem 0.9rem;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #0b3b66;
+        box-shadow: 0 14px 30px -24px rgba(15, 23, 42, 0.5);
+      }
+
+      .page-label::before {
+        content: "";
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #059669, #0b3b66);
+      }
+
+      .hero-panel {
+        border: 1px solid rgba(219, 234, 254, 0.9);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88)),
+          linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(5, 150, 105, 0.06));
+        box-shadow: 0 28px 70px -38px rgba(15, 23, 42, 0.42);
+      }
+
+      .effective-card {
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.98), rgba(239, 246, 255, 0.9));
+      }
+
+      .policy-card {
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 24px 55px -36px rgba(15, 23, 42, 0.35);
+      }
+
+      .policy-section + .policy-section {
+        border-top: 1px solid rgba(226, 232, 240, 0.95);
+        padding-top: 2rem;
+      }
+
+      .policy-heading {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .policy-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 3rem;
+        height: 3rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(11, 59, 102, 0.12);
+        background: linear-gradient(135deg, rgba(239, 246, 255, 0.98), rgba(236, 253, 245, 0.92));
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: #0b3b66;
+        box-shadow: 0 16px 28px -24px rgba(15, 23, 42, 0.55);
+        flex-shrink: 0;
+      }
+
+      .policy-heading-text {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.7rem;
+      }
+
+      .policy-heading-text::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 4rem;
+        height: 0.24rem;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #059669 0%, #38bdf8 100%);
+      }
+
+      .contact-card {
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(239, 246, 255, 0.88));
+      }
+
+      body.theme-dark {
+        color-scheme: dark;
+        background:
+          radial-gradient(circle at top left, rgba(5, 150, 105, 0.18), transparent 28%),
+          linear-gradient(180deg, #020617 0%, #0f172a 100%);
+        color: #e2e8f0;
+        --brand-surface: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
+      }
+
+      body.theme-dark .nav-shell {
+        border-color: rgba(51, 65, 85, 0.95);
+        background:
+          linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.8)),
+          linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(5, 150, 105, 0.1));
+        box-shadow: 0 22px 55px -34px rgba(2, 6, 23, 0.9);
+      }
+
+      body.theme-dark .appbar-nav {
+        border-color: rgba(71, 85, 105, 0.8);
+        background: rgba(15, 23, 42, 0.86);
+      }
+
+      body.theme-dark .brand-mark,
+      body.theme-dark .theme-toggle,
+      body.theme-dark .page-label,
+      body.theme-dark .hero-panel,
+      body.theme-dark .policy-card,
+      body.theme-dark .contact-card,
+      body.theme-dark .effective-card,
+      body.theme-dark footer,
+      body.theme-dark .nav-badge {
+        border-color: rgba(71, 85, 105, 0.75) !important;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.86)) !important;
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .appbar-link {
+        color: #cbd5e1;
+      }
+
+      body.theme-dark .appbar-link:hover,
+      body.theme-dark .appbar-link.is-active {
+        color: #e0f2fe;
+        background: rgba(15, 23, 42, 0.72);
+      }
+
+      body.theme-dark .mobile-appbar-link {
+        border-color: rgba(51, 65, 85, 0.75);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.82));
+        color: #cbd5e1;
+      }
+
+      body.theme-dark #menu-toggle,
+      body.theme-dark #mobile-menu {
+        border-color: rgba(51, 65, 85, 0.9) !important;
+        background: rgba(15, 23, 42, 0.92) !important;
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .brand-subtitle,
+      body.theme-dark p,
+      body.theme-dark li,
+      body.theme-dark .text-slate-600,
+      body.theme-dark .text-slate-500,
+      body.theme-dark .text-slate-700 {
+        color: #94a3b8 !important;
+      }
+
+      body.theme-dark h1,
+      body.theme-dark h2,
+      body.theme-dark h3,
+      body.theme-dark strong,
+      body.theme-dark a,
+      body.theme-dark .text-slate-900 {
+        color: #f8fafc !important;
+      }
+
+      body.theme-dark .policy-section + .policy-section {
+        border-top-color: rgba(51, 65, 85, 0.9);
+      }
+
+      body.theme-dark .policy-number {
+        border-color: rgba(71, 85, 105, 0.75);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.88));
+        color: #e0f2fe;
+      }
+
+      body.theme-dark .theme-toggle {
+        color: #f8fafc;
+      }
+
+      body.theme-dark .theme-toggle .theme-icon-moon {
+        display: none;
+      }
+
+      body.theme-dark .theme-toggle .theme-icon-sun {
+        display: block;
       }
     </style>
   </head>
   <body class="text-slate-800 antialiased">
-    <header class="border-b border-slate-200 bg-white">
-      <div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
+      <div class="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-[1.75rem] px-4 py-3 backdrop-blur-xl sm:px-6">
         <a href="index.html" class="flex items-center gap-3 text-slate-900">
-          <img src="assets/icons/playstore.png" alt="Cashwise app icon" class="h-10 w-10 rounded-2xl shadow-sm" />
-          <span class="text-base font-extrabold tracking-tight sm:text-xl">Cashwise: Track Money Wisely</span>
+          <img src="assets/icons/playstore.png" alt="Cashwise app icon" class="brand-mark h-10 w-10 rounded-2xl shadow-sm" />
+          <span class="flex flex-col">
+            <span class="brand-title display-font text-base font-extrabold tracking-tight sm:text-xl">Cashwise</span>
+            <span class="brand-subtitle">Track Money Wisely</span>
+          </span>
         </a>
-        <a href="index.html" class="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-900 hover:text-slate-900">
-          Back to Home
-        </a>
+
+        <nav class="appbar-nav hidden items-center gap-2 rounded-full p-2 text-sm font-medium text-slate-600 md:flex">
+          <a href="index.html#features" class="appbar-link">Features</a>
+          <a href="index.html#pricing" class="appbar-link">Pricing</a>
+          <a href="privacy-policy.html" class="appbar-link is-active" aria-current="page">Privacy Policy</a>
+          <a href="index.html#contact" class="appbar-link">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C12.615 15.75 8.25 11.385 8.25 6c0-1.33.266-2.599.748-3.752A9.753 9.753 0 1 0 21.75 15c0 .001 0 .001.002.002Z" />
+            </svg>
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75ZM4.5 11.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h1.5Zm18 0a.75.75 0 0 1 0 1.5H21a.75.75 0 0 1 0-1.5h1.5ZM6.47 5.47a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06L6.47 6.53a.75.75 0 0 1 0-1.06Zm9.94 9.94a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM18.53 5.47a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.94 9.94a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0ZM12 6.75A5.25 5.25 0 1 1 6.75 12 5.256 5.256 0 0 1 12 6.75Z" />
+            </svg>
+          </button>
+          <div class="hidden items-center gap-3 md:flex">
+            <span class="nav-badge">Official Site</span>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-play-button inline-flex items-center rounded-full bg-mint px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+            >
+              Get it on Google Play
+            </a>
+          </div>
+        </div>
+
+        <button
+          id="menu-toggle"
+          type="button"
+          class="inline-flex rounded-lg border border-slate-200 p-2 text-slate-700 md:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mx-4 mt-2 hidden rounded-[1.5rem] border border-slate-200/80 bg-white/95 shadow-soft md:hidden sm:mx-6 lg:mx-8">
+        <div class="space-y-1 px-4 py-4 text-sm font-medium text-slate-700">
+          <a href="index.html#features" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Features</a>
+          <a href="index.html#pricing" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Pricing</a>
+          <a href="privacy-policy.html" class="mobile-appbar-link is-active block rounded-xl px-3 py-2.5" aria-current="page">Privacy Policy</a>
+          <a href="index.html#contact" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Contact</a>
+          <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-full bg-mint px-4 py-3 text-center font-semibold text-white">Get it on Google Play</a>
+        </div>
       </div>
     </header>
 
-    <main class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <main class="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <!-- Policy heading -->
-      <section>
-        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-800">Legal</p>
-        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-900">Privacy Policy</h1>
-        <p class="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
-          CashWise is committed to protecting your privacy and handling your data transparently. This page describes what information we collect, how we use it, and the controls available to users.
+      <section class="hero-panel rounded-[2rem] p-6 sm:p-8">
+        <p class="page-label">Legal</p>
+        <h1 class="display-font mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Privacy Policy</h1>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+          CashWise is committed to protecting your privacy and handling your data transparently. This page explains what information we collect, how we use it, and the controls available to users.
         </p>
-        <div class="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm leading-7 text-emerald-900">
+        <div class="effective-card mt-6 rounded-2xl p-5 text-sm leading-7 text-emerald-900">
           <strong>Effective Date:</strong> March 2026
         </div>
       </section>
 
       <!-- Policy content -->
-      <section class="mt-12 space-y-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">1. Information We Collect</h2>
+      <section class="policy-card mt-12 space-y-10 rounded-3xl p-6 sm:p-8">
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">01</span><span class="policy-heading-text">Information We Collect</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             We collect account data, including email addresses and Google Sign-In details, along with device information, usage analytics, and the financial records you enter into the app.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">2. How We Use Your Information</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">02</span><span class="policy-heading-text">How We Use Your Information</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             Data is used to provide secure authentication, manage subscriptions, improve app performance, and communicate important updates.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">3. Data Sharing</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">03</span><span class="policy-heading-text">Data Sharing</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             We do not sell or share your personal data for advertising. Data is shared only with trusted providers such as Firebase and Google Play Billing for authentication and payment processing.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">4. Data Security</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">04</span><span class="policy-heading-text">Data Security</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             All sensitive information is encrypted in transit and at rest. We use industry-standard safeguards to prevent unauthorized access.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">5. User Control</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">05</span><span class="policy-heading-text">User Control</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             You can delete your account and associated data at any time. Subscription details are managed transparently through Google Play.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">6. App Info and Performance</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">06</span><span class="policy-heading-text">App Info and Performance</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             CashWise collects technical information to ensure the app runs smoothly and to improve stability. This data is collected automatically through Firebase services and similar tools and is used only to maintain and improve app performance.
           </p>
@@ -98,22 +510,22 @@
           </ul>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">7. Device or Other IDs</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">07</span><span class="policy-heading-text">Device or Other IDs</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             CashWise may collect device or other identifiers automatically through Firebase and Google Play services. These may include unique user IDs, installation IDs, and purchase tokens. They are used solely to provide authentication, manage subscriptions, and improve app performance, not for advertising or cross-app tracking.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">8. App Activity</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">08</span><span class="policy-heading-text">App Activity</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             CashWise collects limited information about how you interact with the app, such as subscription upgrades, badge achievements, and notification actions. This data supports premium features, entitlement logic, analytics, and fraud prevention, and is not used for advertising or personalization.
           </p>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">9. Data Deletion Requests</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">09</span><span class="policy-heading-text">Data Deletion Requests</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
               We believe you should have full control over your personal information. If you wish to delete your CashWise account and all associated financial records, you can do so through either of the following methods:
           </p>
@@ -141,12 +553,12 @@
             </div>
         </div>
 
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900">Contact Us</h2>
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">10</span><span class="policy-heading-text">Contact Us</span></h2>
           <p class="mt-4 leading-8 text-slate-600">
             If you have questions about this Privacy Policy or would like to submit a data deletion request, contact us at:
           </p>
-          <div class="mt-4 rounded-2xl bg-slate-50 p-5 text-slate-700">
+          <div class="contact-card mt-4 rounded-2xl p-5 text-slate-700">
             <p><strong>Developer:</strong> Hicham-Dev</p>
             <p><strong>Email:</strong> hichamfriends23@gmail.com</p>
             <p><strong>Effective Date:</strong> March 2026</p>
@@ -156,7 +568,7 @@
     </main>
 
     <footer class="border-t border-slate-200 bg-white">
-      <div class="mx-auto flex max-w-4xl flex-col gap-3 px-4 py-8 text-sm text-slate-500 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      <div class="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-8 text-sm text-slate-500 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <p>&copy; 2026 Hicham-Dev. All rights reserved.</p>
         <div class="flex flex-col gap-2 sm:flex-row sm:gap-5">
           <a href="mailto:hichamfriends23@gmail.com" class="transition hover:text-slate-900">hichamfriends23@gmail.com</a>
@@ -164,5 +576,65 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const themeStorageKey = "cashwise-theme";
+
+      function getPreferredTheme() {
+        const storedTheme = localStorage.getItem(themeStorageKey);
+        if (storedTheme === "light" || storedTheme === "dark") {
+          return storedTheme;
+        }
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      function applyTheme(theme) {
+        document.body.classList.toggle("theme-dark", theme === "dark");
+        document.documentElement.style.colorScheme = theme;
+
+        if (themeToggle) {
+          themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+          themeToggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+          themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+        }
+      }
+
+      applyTheme(getPreferredTheme());
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+          const nextTheme = document.body.classList.contains("theme-dark") ? "light" : "dark";
+          localStorage.setItem(themeStorageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+          const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+          menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+          mobileMenu.classList.toggle("hidden", isExpanded);
+        });
+
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+            menuToggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (event) {
+        if (localStorage.getItem(themeStorageKey)) {
+          return;
+        }
+
+        applyTheme(event.matches ? "dark" : "light");
+      });
+    </script>
   </body>
 </html>

@@ -14,34 +14,22 @@
     />
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" type="image/png" href="assets/icons/playstore.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              ink: "#0f172a",
-              ocean: "#0b3b66",
-              mint: "#059669",
-              mist: "#f8fafc",
-              line: "#dbe4ef"
-            },
-            boxShadow: {
-              soft: "0 20px 45px -25px rgba(15, 23, 42, 0.28)"
-            }
-          }
-        }
-      };
-    </script>
+    <link rel="stylesheet" href="assets/styles/tailwind.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
       html {
         scroll-behavior: smooth;
+      }
+
+      :root {
+        color-scheme: light;
+        --brand-gradient: linear-gradient(135deg, #0b3b66 0%, #059669 55%, #38bdf8 100%);
+        --brand-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 246, 255, 0.88));
       }
 
       body {
@@ -50,33 +38,553 @@
           radial-gradient(circle at top left, rgba(5, 150, 105, 0.1), transparent 30%),
           linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
       }
+
+      .display-font {
+        font-family: "Sora", "Inter", sans-serif;
+      }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(11, 59, 102, 0.12);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(219, 234, 254, 0.92));
+        padding: 0.45rem 0.9rem;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #0b3b66;
+        box-shadow: 0 14px 30px -24px rgba(15, 23, 42, 0.5);
+      }
+
+      .section-label::before {
+        content: "";
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #059669, #0b3b66);
+      }
+
+      .section-heading {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 1rem;
+      }
+
+      .section-heading::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 4.5rem;
+        height: 0.3rem;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #059669 0%, #38bdf8 100%);
+      }
+
+      .section-heading.centered::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .brand-mark {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(11, 59, 102, 0.1);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(219, 234, 254, 0.9));
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: auto -35% -45% auto;
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 9999px;
+        background: rgba(56, 189, 248, 0.2);
+        filter: blur(10px);
+      }
+
+      .brand-title {
+        line-height: 1.05;
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .appbar-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 9999px;
+        padding: 0.55rem 0.95rem;
+        color: #334155;
+        transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+      }
+
+      .appbar-link::after {
+        content: "";
+        position: absolute;
+        left: 0.95rem;
+        right: 0.95rem;
+        bottom: 0.4rem;
+        height: 0.16rem;
+        transform: scaleX(0);
+        transform-origin: center;
+        border-radius: 9999px;
+        background: var(--brand-gradient);
+        transition: transform 180ms ease;
+      }
+
+      .appbar-link:hover {
+        color: #0b3b66;
+        background: rgba(255, 255, 255, 0.72);
+        transform: translateY(-1px);
+      }
+
+      .appbar-link:hover::after,
+      .appbar-link:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .appbar-link:focus-visible {
+        outline: 2px solid rgba(56, 189, 248, 0.45);
+        outline-offset: 3px;
+      }
+
+      .mobile-appbar-link {
+        border: 1px solid transparent;
+        background: linear-gradient(135deg, rgba(248, 250, 252, 0.92), rgba(239, 246, 255, 0.82));
+        transition: border-color 180ms ease, color 180ms ease, transform 180ms ease, background-color 180ms ease;
+      }
+
+      .mobile-appbar-link:hover {
+        border-color: rgba(56, 189, 248, 0.25);
+        color: #0b3b66;
+        transform: translateX(4px);
+      }
+
+      .nav-shell {
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7)),
+          linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(5, 150, 105, 0.08));
+        box-shadow: 0 22px 55px -34px rgba(15, 23, 42, 0.45);
+      }
+
+      .appbar-nav {
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        background: rgba(255, 255, 255, 0.7);
+      }
+
+      .brand-subtitle {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #64748b;
+      }
+
+      .nav-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(11, 59, 102, 0.08);
+        background: var(--brand-surface);
+        padding: 0.5rem 0.85rem;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #0b3b66;
+      }
+
+      .nav-badge::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #059669, #38bdf8);
+      }
+
+      .nav-play-button {
+        box-shadow: 0 18px 35px -24px rgba(5, 150, 105, 0.85);
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(11, 59, 102, 0.1);
+        background: var(--brand-surface);
+        color: #0b3b66;
+        transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+      }
+
+      .theme-toggle:hover {
+        transform: translateY(-1px);
+        color: #0f172a;
+      }
+
+      .theme-toggle svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .theme-toggle .theme-icon-sun {
+        display: none;
+      }
+
+      .theme-toggle-label {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .hero-accent {
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(16, 185, 129, 0.18);
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.98), rgba(239, 246, 255, 0.94));
+        padding: 0.55rem 1rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #0b3b66;
+        box-shadow: 0 14px 35px -28px rgba(15, 23, 42, 0.5);
+      }
+
+      .hero-kicker::before {
+        content: "";
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #059669, #38bdf8);
+      }
+
+      .hero-panel {
+        border: 1px solid rgba(219, 234, 254, 0.9);
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88)),
+          linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(5, 150, 105, 0.06));
+        box-shadow: 0 28px 70px -38px rgba(15, 23, 42, 0.42);
+      }
+
+      .hero-proof {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(203, 213, 225, 0.9);
+        background: rgba(255, 255, 255, 0.84);
+        padding: 0.55rem 0.85rem;
+        font-size: 0.84rem;
+        font-weight: 600;
+        color: #334155;
+      }
+
+      .hero-proof::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #059669, #0b3b66);
+      }
+
+      .hero-primary-cta {
+        box-shadow: 0 22px 45px -28px rgba(11, 59, 102, 0.8);
+      }
+
+      .hero-primary-cta:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero-secondary-cta:hover {
+        transform: translateY(-1px);
+      }
+
+      body:not(.theme-dark) #home .hero-secondary-cta {
+        border-color: rgb(203, 213, 225) !important;
+        background: none !important;
+        background-color: rgb(255, 255, 255) !important;
+        color: rgb(51, 65, 85) !important;
+      }
+
+      body:not(.theme-dark) #home .hero-secondary-cta:hover {
+        border-color: rgb(11, 59, 102) !important;
+        background: none !important;
+        background-color: rgb(255, 255, 255) !important;
+        color: rgb(11, 59, 102) !important;
+      }
+
+      .js-ready .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(18px);
+        filter: blur(6px);
+        transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.65, 0.2, 1), filter 620ms ease;
+      }
+
+      .js-ready .animate-on-scroll.animate-delay {
+        transition-delay: 110ms;
+      }
+
+      .js-ready .animate-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      .js-ready .animate-card-on-scroll {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.65, 0.2, 1);
+      }
+
+      .js-ready .animate-card-on-scroll.card-delay-1 {
+        transition-delay: 70ms;
+      }
+
+      .js-ready .animate-card-on-scroll.card-delay-2 {
+        transition-delay: 140ms;
+      }
+
+      .js-ready .animate-card-on-scroll.card-delay-3 {
+        transition-delay: 210ms;
+      }
+
+      .js-ready .animate-card-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      body.theme-dark {
+        color: #e2e8f0;
+        color-scheme: dark;
+        --brand-surface: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
+        background:
+          radial-gradient(circle at top left, rgba(5, 150, 105, 0.18), transparent 30%),
+          linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      }
+
+      body.theme-dark .section-label {
+        border-color: rgba(148, 163, 184, 0.22);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.88));
+        color: #cbd5e1;
+      }
+
+      body.theme-dark .section-heading,
+      body.theme-dark .brand-subtitle,
+      body.theme-dark .hero-proof,
+      body.theme-dark .mobile-appbar-link,
+      body.theme-dark .appbar-link,
+      body.theme-dark .nav-badge,
+      body.theme-dark .hero-kicker,
+      body.theme-dark .brand-mark,
+      body.theme-dark .nav-shell,
+      body.theme-dark .hero-panel {
+        color: inherit;
+      }
+
+      body.theme-dark .nav-shell {
+        border-color: rgba(51, 65, 85, 0.95);
+        background:
+          linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.8)),
+          linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(5, 150, 105, 0.1));
+        box-shadow: 0 22px 55px -34px rgba(2, 6, 23, 0.9);
+      }
+
+      body.theme-dark .appbar-nav {
+        border-color: rgba(71, 85, 105, 0.8);
+        background: rgba(15, 23, 42, 0.86);
+      }
+
+      body.theme-dark .brand-subtitle {
+        color: #94a3b8;
+      }
+
+      body.theme-dark .appbar-link {
+        color: #cbd5e1;
+      }
+
+      body.theme-dark .appbar-link:hover {
+        color: #e0f2fe;
+        background: rgba(15, 23, 42, 0.72);
+      }
+
+      body.theme-dark .mobile-appbar-link {
+        border-color: rgba(51, 65, 85, 0.75);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(30, 41, 59, 0.82));
+        color: #cbd5e1;
+      }
+
+      body.theme-dark .nav-badge,
+      body.theme-dark .hero-kicker,
+      body.theme-dark .hero-proof,
+      body.theme-dark .hero-panel,
+      body.theme-dark .brand-mark {
+        border-color: rgba(71, 85, 105, 0.75);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.86));
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .hero-proof {
+        color: #cbd5e1;
+      }
+
+      body.theme-dark #home h1,
+      body.theme-dark #home .text-ink {
+        color: #f8fafc !important;
+      }
+
+      body.theme-dark #home .text-slate-600,
+      body.theme-dark #home .text-slate-500,
+      body.theme-dark #home .text-slate-700 {
+        color: #94a3b8 !important;
+      }
+
+      body.theme-dark #home .hero-secondary-cta {
+        border-color: rgba(71, 85, 105, 0.9) !important;
+        background: none !important;
+        background-color: rgba(15, 23, 42, 0.92) !important;
+        color: #e2e8f0 !important;
+      }
+
+      body.theme-dark #home .hero-secondary-cta:hover {
+        border-color: rgba(56, 189, 248, 0.45) !important;
+        color: #e0f2fe !important;
+        background: none !important;
+        background-color: rgba(15, 23, 42, 0.98) !important;
+      }
+
+      body.theme-dark #home .absolute.bg-white\/90,
+      body.theme-dark #home .absolute.bg-white\/92 {
+        border-color: rgba(71, 85, 105, 0.85) !important;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.88)) !important;
+      }
+
+      body.theme-dark #home .absolute.bg-white\/90 p:last-child,
+      body.theme-dark #home .absolute.bg-white\/92 p:last-child {
+        color: #e2e8f0 !important;
+      }
+
+      body.theme-dark .hero-panel p,
+      body.theme-dark #features p,
+      body.theme-dark #media-showcase p,
+      body.theme-dark #pricing p,
+      body.theme-dark #pricing li {
+        color: #94a3b8;
+      }
+
+      body.theme-dark #features h2,
+      body.theme-dark #features h3,
+      body.theme-dark #media-showcase h2,
+      body.theme-dark #media-showcase h3,
+      body.theme-dark #media-showcase h4,
+      body.theme-dark #pricing h2,
+      body.theme-dark #pricing h3 {
+        color: #f8fafc;
+      }
+
+      body.theme-dark #features article,
+      body.theme-dark #media-showcase article,
+      body.theme-dark #media-showcase figure,
+      body.theme-dark #pricing article {
+        border-color: rgba(51, 65, 85, 0.9) !important;
+        background: rgba(15, 23, 42, 0.9) !important;
+        box-shadow: 0 20px 45px -28px rgba(2, 6, 23, 0.8);
+      }
+
+      body.theme-dark #media-showcase {
+        border-color: rgba(51, 65, 85, 0.9);
+        background: rgba(15, 23, 42, 0.45);
+      }
+
+      body.theme-dark footer {
+        border-color: rgba(51, 65, 85, 0.9);
+        background: #020617;
+      }
+
+      body.theme-dark footer p,
+      body.theme-dark footer a {
+        color: #94a3b8;
+      }
+
+      body.theme-dark footer a:hover {
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .theme-toggle {
+        border-color: rgba(71, 85, 105, 0.75);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.86));
+        color: #f8fafc;
+      }
+
+      body.theme-dark .theme-toggle .theme-icon-moon {
+        display: none;
+      }
+
+      body.theme-dark .theme-toggle .theme-icon-sun {
+        display: block;
+      }
     </style>
   </head>
   <body class="text-slate-800 antialiased">
     <!-- Header and navigation -->
-    <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
+      <div class="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-[1.75rem] px-4 py-3 backdrop-blur-xl sm:px-6">
         <a href="#home" class="flex items-center gap-3 text-ink">
-          <img src="assets/icons/playstore.png" alt="Cashwise app icon" class="h-10 w-10 rounded-2xl shadow-sm" />
-          <span class="text-base font-extrabold tracking-tight sm:text-xl">Cashwise: Track Money Wisely</span>
+          <img src="assets/icons/playstore.png" alt="Cashwise app icon" class="brand-mark h-10 w-10 rounded-2xl shadow-sm" />
+          <span class="flex flex-col">
+            <span class="brand-title display-font text-base font-extrabold tracking-tight sm:text-xl">Cashwise</span>
+            <span class="brand-subtitle">Track Money Wisely</span>
+          </span>
         </a>
 
-        <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-          <a href="#features" class="transition hover:text-ocean">Features</a>
-          <a href="#pricing" class="transition hover:text-ocean">Pricing</a>
-          <a href="privacy-policy.html" class="transition hover:text-ocean">Privacy Policy</a>
-          <a href="#contact" class="transition hover:text-ocean">Contact</a>
+        <nav class="appbar-nav hidden items-center gap-2 rounded-full p-2 text-sm font-medium text-slate-600 md:flex">
+          <a href="#features" class="appbar-link">Features</a>
+          <a href="#pricing" class="appbar-link">Pricing</a>
+          <a href="privacy-policy.html" class="appbar-link">Privacy Policy</a>
+          <a href="#contact" class="appbar-link">Contact</a>
         </nav>
 
-        <div class="hidden md:block">
-          <a
-            href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center rounded-full bg-mint px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-emerald-700"
-          >
-            Get it on Google Play
-          </a>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C12.615 15.75 8.25 11.385 8.25 6c0-1.33.266-2.599.748-3.752A9.753 9.753 0 1 0 21.75 15c0 .001 0 .001.002.002Z" />
+            </svg>
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75ZM4.5 11.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h1.5Zm18 0a.75.75 0 0 1 0 1.5H21a.75.75 0 0 1 0-1.5h1.5ZM6.47 5.47a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06L6.47 6.53a.75.75 0 0 1 0-1.06Zm9.94 9.94a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM18.53 5.47a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.94 9.94a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0ZM12 6.75A5.25 5.25 0 1 1 6.75 12 5.256 5.256 0 0 1 12 6.75Z" />
+            </svg>
+          </button>
+          <div class="hidden items-center gap-3 md:flex">
+            <span class="nav-badge">Official Site</span>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-play-button inline-flex items-center rounded-full bg-mint px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+            >
+              Get it on Google Play
+            </a>
+          </div>
         </div>
 
         <button
@@ -93,12 +601,12 @@
         </button>
       </div>
 
-      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden">
+      <div id="mobile-menu" class="mx-4 mt-2 hidden rounded-[1.5rem] border border-slate-200/80 bg-white/95 shadow-soft md:hidden sm:mx-6 lg:mx-8">
         <div class="space-y-1 px-4 py-4 text-sm font-medium text-slate-700">
-          <a href="#features" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Features</a>
-          <a href="#pricing" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Pricing</a>
-          <a href="privacy-policy.html" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Privacy Policy</a>
-          <a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Contact</a>
+          <a href="#features" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Features</a>
+          <a href="#pricing" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Pricing</a>
+          <a href="privacy-policy.html" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Privacy Policy</a>
+          <a href="#contact" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Contact</a>
           <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-full bg-mint px-4 py-3 text-center font-semibold text-white">Get it on Google Play</a>
         </div>
       </div>
@@ -107,42 +615,50 @@
     <main id="home">
       <!-- Hero section -->
       <section class="relative overflow-hidden">
+        <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[30rem] bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.14),_transparent_34%),radial-gradient(circle_at_80%_18%,_rgba(5,150,105,0.14),_transparent_28%)]"></div>
         <div class="mx-auto grid max-w-7xl gap-14 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
-          <div>
-            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-semibold text-mint">
-              Financial clarity for modern households and small businesses
+          <div class="max-w-2xl">
+            <span class="hero-kicker">
+              Built for modern households and small businesses
             </span>
-            <h1 class="mt-6 max-w-xl text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              Track Your Money Wisely.
+            <h1 class="display-font mt-6 max-w-2xl text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-ink sm:text-6xl lg:text-7xl">
+              Build a calmer money routine with <span class="hero-accent">Cashwise</span>.
             </h1>
             <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-              The ultimate digital ledger and cash book app to manage your finances seamlessly.
+              A polished digital ledger and cash book app for tracking spending, recurring costs, savings goals, and day-to-day balance with less friction.
             </p>
 
-            <div id="download" class="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center rounded-full bg-ocean px-6 py-3.5 text-base font-semibold text-white shadow-soft transition hover:bg-sky-900"
-              >
-                Download Now
-              </a>
-              <button
-                id="watch-video"
-                type="button"
-                class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:border-ocean hover:text-ocean"
-              >
-                Watch Demo
-              </button>
+            <div id="download" class="hero-panel mt-8 flex max-w-2xl flex-col gap-4 rounded-[2rem] p-4 sm:p-5">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hero-primary-cta inline-flex items-center justify-center rounded-full bg-ocean px-6 py-4 text-base font-semibold text-white transition hover:bg-sky-900"
+                >
+                  Download on Google Play
+                </a>
+                <button
+                  id="watch-video"
+                  type="button"
+                  class="hero-secondary-cta inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-4 text-base font-semibold text-slate-700 transition hover:border-ocean hover:text-ocean"
+                >
+                  Watch Demo
+                </button>
+              </div>
+              <p class="px-1 text-sm leading-7 text-slate-500">
+                Start free with one Cashbook, then unlock more cards over time or upgrade for unlimited access.
+              </p>
             </div>
+
+
           </div>
 
           <div class="relative">
             <div class="absolute -left-6 top-10 hidden h-24 w-24 rounded-full bg-emerald-100 blur-2xl sm:block"></div>
             <div class="absolute -right-2 bottom-6 hidden h-28 w-28 rounded-full bg-sky-100 blur-2xl sm:block"></div>
 
-            <div class="relative rounded-3xl border border-line bg-white p-4 shadow-soft">
+            <div class="relative z-10 rounded-3xl border border-line bg-white p-4 shadow-soft">
               <div class="rounded-3xl bg-slate-950 p-3">
                 <div class="flex items-center gap-2 pb-3">
                   <span class="h-3 w-3 rounded-full bg-rose-400"></span>
@@ -164,6 +680,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -171,15 +688,15 @@
       <!-- Features section -->
       <section id="features" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div class="max-w-3xl">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Features</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">CashWise makes managing money simple</h2>
+          <p class="section-label animate-on-scroll">Features</p>
+          <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">CashWise makes managing money simple</h2>
           <p class="mt-4 text-lg leading-8 text-slate-600">
             Track your expenses, set budgets, and stay in control of your personal finances, all in one easy-to-use app. No complicated features, no clutter. Just the essentials you need.
           </p>
         </div>
 
         <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <article class="rounded-3xl border border-[#d9bea7] bg-[#fff9f4] p-6 shadow-soft">
+          <article class="animate-card-on-scroll rounded-3xl border border-[#d9bea7] bg-[#fff9f4] p-6 shadow-soft">
             <div class="inline-flex rounded-[1.25rem] bg-[#f0dfcf] p-3 text-[#9f582d]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M7 3.75A2.25 2.25 0 0 0 4.75 6v12A2.25 2.25 0 0 0 7 20.25h10A2.25 2.25 0 0 0 19.25 18V7.56a2.25 2.25 0 0 0-.659-1.591l-1.56-1.56A2.25 2.25 0 0 0 15.44 3.75H7Zm2.25 3a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-1.5Z" />
@@ -196,7 +713,7 @@
             </p>
           </article>
 
-          <article class="rounded-3xl border border-[#d9bea7] bg-[#fff9f4] p-6 shadow-soft">
+          <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#d9bea7] bg-[#fff9f4] p-6 shadow-soft">
             <div class="inline-flex rounded-[1.25rem] bg-[#f0dfcf] p-3 text-[#9f582d]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.75 3.75A2.25 2.25 0 0 0 4.5 6v12a2.25 2.25 0 0 0 2.25 2.25h10.5A2.25 2.25 0 0 0 19.5 18V8.25l-4.5-4.5H6.75Zm1.5 5.25a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Zm0 3.75A.75.75 0 0 1 9 12h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Zm0 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z" />
@@ -213,7 +730,7 @@
             </p>
           </article>
 
-          <article class="rounded-3xl border border-[#f0dd8a] bg-[#fffbed] p-6 shadow-soft">
+          <article class="animate-card-on-scroll card-delay-2 rounded-3xl border border-[#f0dd8a] bg-[#fffbed] p-6 shadow-soft">
             <div class="inline-flex rounded-[1.25rem] bg-[#fff1bf] p-3 text-[#f5b600]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 3.75a.75.75 0 0 1 .332.077l7.5 3.75a.75.75 0 0 1-.164 1.395l-.918.23V17.25H20a.75.75 0 0 1 0 1.5H4a.75.75 0 0 1 0-1.5h1.25V9.202l-.918-.23a.75.75 0 0 1-.164-1.395l7.5-3.75A.75.75 0 0 1 12 3.75ZM8.75 10.5v6.75h1.5V10.5h-1.5Zm5 0v6.75h1.5V10.5h-1.5Z" />
@@ -230,7 +747,7 @@
             </p>
           </article>
 
-          <article class="rounded-3xl border border-[#b7d8ef] bg-[#f4fbff] p-6 shadow-soft">
+          <article class="animate-card-on-scroll rounded-3xl border border-[#b7d8ef] bg-[#f4fbff] p-6 shadow-soft">
             <div class="inline-flex rounded-[1.25rem] bg-[#d9efff] p-3 text-[#2f9cf3]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M15.03 4.47a.75.75 0 0 1 0 1.06L13.81 6.75h2.44A4.5 4.5 0 0 1 20.75 11.25a.75.75 0 0 1-1.5 0 3 3 0 0 0-3-3h-2.44l1.22 1.22a.75.75 0 1 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1 0-1.06l2.5-2.5a.75.75 0 0 1 1.06 0ZM9 12a.75.75 0 0 1 .75.75 3 3 0 0 0 3 3h2.44l-1.22-1.22a.75.75 0 1 1 1.06-1.06l2.5 2.5a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 1 1-1.06-1.06l1.22-1.22h-2.44A4.5 4.5 0 0 1 8.25 12.75.75.75 0 0 1 9 12Z" />
@@ -247,7 +764,7 @@
             </p>
           </article>
 
-          <article class="rounded-3xl border border-[#dfb6e6] bg-[#fff5fe] p-6 shadow-soft md:col-span-2 xl:col-span-1">
+          <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#dfb6e6] bg-[#fff5fe] p-6 shadow-soft md:col-span-2 xl:col-span-1">
             <div class="inline-flex rounded-[1.25rem] bg-[#f1d8f5] p-3 text-[#a127bf]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 4.5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15Zm-.75 1.56v11.88a6 6 0 0 1 0-11.88Zm1.5 11.88V12.75H17.94a6.01 6.01 0 0 1-5.19 5.19Zm0-6.69V6.06a6.01 6.01 0 0 1 5.19 5.19h-5.19Z" />
@@ -270,8 +787,8 @@
       <section id="media-showcase" class="border-y border-slate-200/70 bg-white/80">
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div class="max-w-3xl">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Media Showcase</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">See Cashwise in motion and screen by screen</h2>
+            <p class="section-label animate-on-scroll">Media Showcase</p>
+            <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">See Cashwise in motion and screen by screen</h2>
             <p class="mt-4 text-lg leading-8 text-slate-600">
               Browse guided video previews first, then explore the app interface through a dedicated screenshot gallery.
             </p>
@@ -280,8 +797,8 @@
           <div id="media-videos" class="mt-12">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-mint">Videos</p>
-                <h3 class="mt-2 text-2xl font-bold tracking-tight text-ink">Quick product demos</h3>
+                <p class="section-label animate-on-scroll">Videos</p>
+                <h3 class="section-heading animate-on-scroll animate-delay mt-4 text-2xl font-bold tracking-tight text-ink">Quick product demos</h3>
               </div>
             </div>
 
@@ -333,8 +850,8 @@
           <div id="media-screenshots" class="mt-16">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Screenshots</p>
-                <h3 class="mt-2 text-2xl font-bold tracking-tight text-ink">A closer look at the interface</h3>
+                <p class="section-label animate-on-scroll">Screenshots</p>
+                <h3 class="section-heading animate-on-scroll animate-delay mt-4 text-2xl font-bold tracking-tight text-ink">A closer look at the interface</h3>
               </div>
               <p class="max-w-md text-sm leading-7 text-slate-500">
                 Explore key screens including setup, card creation, recurring expenses, settings, and notifications.
@@ -398,15 +915,15 @@
       <!-- Pricing section -->
       <section id="pricing" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div class="max-w-3xl mx-auto text-center">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Pricing</p>
-          <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Choose the plan that fits you</h2>
+          <p class="section-label animate-on-scroll">Pricing</p>
+          <h2 class="section-heading centered animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Choose the plan that fits you</h2>
           <p class="mt-4 text-lg leading-8 text-slate-600">
             Free includes 1 free Cashbook plus ad-based 7-day card unlocks that can be activated again anytime by watching another ad. Premium plans remove limits and give unlimited access.
           </p>
         </div>
 
         <div class="mt-12 grid gap-6 lg:grid-cols-3">
-          <article class="rounded-3xl border border-[#d9c8bc] bg-[#fbf6f2] p-8 shadow-soft">
+          <article class="animate-card-on-scroll rounded-3xl border border-[#d9c8bc] bg-[#fbf6f2] p-8 shadow-soft">
             <div class="inline-flex rounded-2xl bg-[#efe4dc] p-3 text-[#6c4b3b]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M12 1.5a3.75 3.75 0 0 0-3.75 3.75V7.5H7.5A2.25 2.25 0 0 0 5.25 9.75v9A2.25 2.25 0 0 0 7.5 21h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 16.5 7.5h-.75V5.25A3.75 3.75 0 0 0 12 1.5Zm-2.25 6V5.25a2.25 2.25 0 1 1 4.5 0V7.5h-4.5Z" />
@@ -424,10 +941,13 @@
               <li>Each rewarded unlock stays active for 7 days</li>
               <li>You can unlock the same card type again anytime by watching another ad</li>
             </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-full bg-[#6c4b3b] px-5 py-3 font-semibold text-white transition hover:bg-[#583b2f]">
+              Start Free
+            </a>
             <p class="mt-6 text-sm leading-7 text-slate-500">When a 7-day unlock expires, you can relock access again anytime by watching another ad, or upgrade to Premium for unlimited cards and unrestricted access.</p>
           </article>
 
-          <article class="rounded-3xl border border-[#a8d7a6] bg-[#f5fbef] p-8 shadow-soft">
+          <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#a8d7a6] bg-[#f5fbef] p-8 shadow-soft">
             <div class="inline-flex rounded-2xl bg-[#e5f6dd] p-3 text-[#43a047]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.75 2.25a.75.75 0 0 1 .75.75v.75h9V3a.75.75 0 0 1 1.5 0v.75h.75A2.25 2.25 0 0 1 21 6v12.75A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V6a2.25 2.25 0 0 1 2.25-2.25H6V3a.75.75 0 0 1 .75-.75ZM4.5 9.75v9a.75.75 0 0 0 .75.75h13.5a.75.75 0 0 0 .75-.75v-9H4.5Z" />
@@ -450,7 +970,7 @@
             </a>
           </article>
 
-          <article class="relative rounded-3xl border-2 border-[#f8b400] bg-[#fff7e6] p-8 shadow-soft">
+          <article class="animate-card-on-scroll card-delay-2 relative rounded-3xl border-2 border-[#f8b400] bg-[#fff7e6] p-8 shadow-soft">
             <span class="absolute right-6 top-6 rounded-full bg-[#f8b400] px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white">Recommended</span>
             <div class="inline-flex rounded-2xl bg-[#ffe8ab] p-3 text-[#f0a000]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -480,8 +1000,8 @@
       <section id="contact" class="bg-ink text-white">
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:px-8 lg:py-20">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Contact</p>
-            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Contact Cashwise: Track Money Wisely</h2>
+            <p class="section-label animate-on-scroll">Contact</p>
+            <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Contact Cashwise: Track Money Wisely</h2>
             <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
               For support, privacy requests, business inquiries, or verification needs, reach us through the contact options below.
             </p>
@@ -547,6 +1067,91 @@
       const menuToggle = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
       const watchVideoButton = document.getElementById("watch-video");
+      const themeToggle = document.getElementById("theme-toggle");
+      const animatedHeadings = document.querySelectorAll(".animate-on-scroll");
+      const animatedCards = document.querySelectorAll(".animate-card-on-scroll");
+      const themeStorageKey = "cashwise-theme";
+
+      function getPreferredTheme() {
+        const storedTheme = localStorage.getItem(themeStorageKey);
+        if (storedTheme === "light" || storedTheme === "dark") {
+          return storedTheme;
+        }
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      function applyTheme(theme) {
+        document.body.classList.toggle("theme-dark", theme === "dark");
+        document.documentElement.style.colorScheme = theme;
+
+        if (watchVideoButton) {
+          if (theme === "dark") {
+            watchVideoButton.style.backgroundColor = "rgba(15, 23, 42, 0.92)";
+            watchVideoButton.style.color = "rgb(226, 232, 240)";
+            watchVideoButton.style.borderColor = "rgba(71, 85, 105, 0.9)";
+            watchVideoButton.style.backgroundImage = "none";
+          } else {
+            watchVideoButton.style.backgroundColor = "rgb(255, 255, 255)";
+            watchVideoButton.style.color = "rgb(51, 65, 85)";
+            watchVideoButton.style.borderColor = "rgb(203, 213, 225)";
+            watchVideoButton.style.backgroundImage = "none";
+          }
+        }
+
+        if (themeToggle) {
+          themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+          themeToggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+          themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+        }
+      }
+
+      applyTheme(getPreferredTheme());
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+          const nextTheme = document.body.classList.contains("theme-dark") ? "light" : "dark";
+          localStorage.setItem(themeStorageKey, nextTheme);
+          applyTheme(nextTheme);
+        });
+      }
+
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (event) {
+        if (localStorage.getItem(themeStorageKey)) {
+          return;
+        }
+
+        applyTheme(event.matches ? "dark" : "light");
+      });
+
+      if (animatedHeadings.length || animatedCards.length) {
+        document.body.classList.add("js-ready");
+
+        const motionObserver = new IntersectionObserver(
+          function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.18,
+            rootMargin: "0px 0px -8% 0px"
+          }
+        );
+
+        animatedHeadings.forEach(function (element) {
+          motionObserver.observe(element);
+        });
+
+        animatedCards.forEach(function (element) {
+          motionObserver.observe(element);
+        });
+      }
 
       menuToggle.addEventListener("click", function () {
         const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
