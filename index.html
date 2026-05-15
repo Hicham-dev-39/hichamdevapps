@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cashwise: Track Money Wisely</title>
+    <meta
+      name="description"
+      content="CashWise is a digital ledger and cash book app built to help users track expenses, manage records, and stay in control of money with confidence."
+    />
+    <meta
+      name="keywords"
+      content="CashWise, digital ledger, cash book app, finance tracking, Android budgeting"
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" type="image/png" href="assets/icons/playstore.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#0f172a",
+              ocean: "#0b3b66",
+              mint: "#059669",
+              mist: "#f8fafc",
+              line: "#dbe4ef"
+            },
+            boxShadow: {
+              soft: "0 20px 45px -25px rgba(15, 23, 42, 0.28)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(5, 150, 105, 0.1), transparent 30%),
+          linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      }
+    </style>
+  </head>
+  <body class="text-slate-800 antialiased">
+    <!-- Header and navigation -->
+    <header class="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" class="flex items-center gap-3 text-ink">
+          <img src="assets/icons/playstore.png" alt="Cashwise app icon" class="h-10 w-10 rounded-2xl shadow-sm" />
+          <span class="text-base font-extrabold tracking-tight sm:text-xl">Cashwise: Track Money Wisely</span>
+        </a>
+
+        <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+          <a href="#features" class="transition hover:text-ocean">Features</a>
+          <a href="#pricing" class="transition hover:text-ocean">Pricing</a>
+          <a href="privacy-policy.html" class="transition hover:text-ocean">Privacy Policy</a>
+          <a href="#contact" class="transition hover:text-ocean">Contact</a>
+        </nav>
+
+        <div class="hidden md:block">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-full bg-mint px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-emerald-700"
+          >
+            Get it on Google Play
+          </a>
+        </div>
+
+        <button
+          id="menu-toggle"
+          type="button"
+          class="inline-flex rounded-lg border border-slate-200 p-2 text-slate-700 md:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white md:hidden">
+        <div class="space-y-1 px-4 py-4 text-sm font-medium text-slate-700">
+          <a href="#features" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Features</a>
+          <a href="#pricing" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Pricing</a>
+          <a href="privacy-policy.html" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Privacy Policy</a>
+          <a href="#contact" class="block rounded-lg px-3 py-2 hover:bg-slate-50">Contact</a>
+          <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-full bg-mint px-4 py-3 text-center font-semibold text-white">Get it on Google Play</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero section -->
+      <section class="relative overflow-hidden">
+        <div class="mx-auto grid max-w-7xl gap-14 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+          <div>
+            <span class="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-semibold text-mint">
+              Financial clarity for modern households and small businesses
+            </span>
+            <h1 class="mt-6 max-w-xl text-4xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl lg:text-6xl">
+              Track Your Money Wisely.
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              The ultimate digital ledger and cash book app to manage your finances seamlessly.
+            </p>
+
+            <div id="download" class="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full bg-ocean px-6 py-3.5 text-base font-semibold text-white shadow-soft transition hover:bg-sky-900"
+              >
+                Download Now
+              </a>
+              <button
+                id="watch-video"
+                type="button"
+                class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-700 transition hover:border-ocean hover:text-ocean"
+              >
+                Watch Demo
+              </button>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-6 top-10 hidden h-24 w-24 rounded-full bg-emerald-100 blur-2xl sm:block"></div>
+            <div class="absolute -right-2 bottom-6 hidden h-28 w-28 rounded-full bg-sky-100 blur-2xl sm:block"></div>
+
+            <div class="relative rounded-3xl border border-line bg-white p-4 shadow-soft">
+              <div class="rounded-3xl bg-slate-950 p-3">
+                <div class="flex items-center gap-2 pb-3">
+                  <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                  <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+                  <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                </div>
+                <div class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/70">
+                  <video
+                    class="h-[420px] w-full object-cover object-top sm:h-[520px]"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    poster="assets/images/04.jpg"
+                  >
+                    <source src="assets/videos/55.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features section -->
+      <section id="features" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Features</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">CashWise makes managing money simple</h2>
+          <p class="mt-4 text-lg leading-8 text-slate-600">
+            Track your expenses, set budgets, and stay in control of your personal finances, all in one easy-to-use app. No complicated features, no clutter. Just the essentials you need.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <article class="rounded-3xl border border-[#d9bea7] bg-[#fff9f4] p-6 shadow-soft">
+            <div class="inline-flex rounded-[1.25rem] bg-[#f0dfcf] p-3 text-[#9f582d]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M7 3.75A2.25 2.25 0 0 0 4.75 6v12A2.25 2.25 0 0 0 7 20.25h10A2.25 2.25 0 0 0 19.25 18V7.56a2.25 2.25 0 0 0-.659-1.591l-1.56-1.56A2.25 2.25 0 0 0 15.44 3.75H7Zm2.25 3a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-1.5Z" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <h3 class="text-xl font-bold text-[#8e4d26]">Cash Book</h3>
+            </div>
+            <p class="mt-3 text-sm font-semibold leading-7 text-slate-700">
+              Record daily income and expenses.
+            </p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Helps you gain a clear view of your total money flow and current balance in real time.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-[#d9bea7] bg-[#fff9f4] p-6 shadow-soft">
+            <div class="inline-flex rounded-[1.25rem] bg-[#f0dfcf] p-3 text-[#9f582d]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.75 3.75A2.25 2.25 0 0 0 4.5 6v12a2.25 2.25 0 0 0 2.25 2.25h10.5A2.25 2.25 0 0 0 19.5 18V8.25l-4.5-4.5H6.75Zm1.5 5.25a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Zm0 3.75A.75.75 0 0 1 9 12h6a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Zm0 3.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <h3 class="text-xl font-bold text-[#8e4d26]">Spending</h3>
+            </div>
+            <p class="mt-3 text-sm font-semibold leading-7 text-slate-700">
+              Log and categorize specific spending habits.
+            </p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Helps you identify exactly where your money is going so you can cut back on unnecessary costs.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-[#f0dd8a] bg-[#fffbed] p-6 shadow-soft">
+            <div class="inline-flex rounded-[1.25rem] bg-[#fff1bf] p-3 text-[#f5b600]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 3.75a.75.75 0 0 1 .332.077l7.5 3.75a.75.75 0 0 1-.164 1.395l-.918.23V17.25H20a.75.75 0 0 1 0 1.5H4a.75.75 0 0 1 0-1.5h1.25V9.202l-.918-.23a.75.75 0 0 1-.164-1.395l7.5-3.75A.75.75 0 0 1 12 3.75ZM8.75 10.5v6.75h1.5V10.5h-1.5Zm5 0v6.75h1.5V10.5h-1.5Z" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <h3 class="text-xl font-bold text-[#f0b400]">Savings</h3>
+            </div>
+            <p class="mt-3 text-sm font-semibold leading-7 text-slate-700">
+              Set financial goals with specific deadlines.
+            </p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Helps you stay disciplined and track your progress toward buying the things that matter most.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-[#b7d8ef] bg-[#f4fbff] p-6 shadow-soft">
+            <div class="inline-flex rounded-[1.25rem] bg-[#d9efff] p-3 text-[#2f9cf3]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M15.03 4.47a.75.75 0 0 1 0 1.06L13.81 6.75h2.44A4.5 4.5 0 0 1 20.75 11.25a.75.75 0 0 1-1.5 0 3 3 0 0 0-3-3h-2.44l1.22 1.22a.75.75 0 1 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1 0-1.06l2.5-2.5a.75.75 0 0 1 1.06 0ZM9 12a.75.75 0 0 1 .75.75 3 3 0 0 0 3 3h2.44l-1.22-1.22a.75.75 0 1 1 1.06-1.06l2.5 2.5a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 1 1-1.06-1.06l1.22-1.22h-2.44A4.5 4.5 0 0 1 8.25 12.75.75.75 0 0 1 9 12Z" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <h3 class="text-xl font-bold text-[#2f9cf3]">Recurring Expense</h3>
+            </div>
+            <p class="mt-3 text-sm font-semibold leading-7 text-slate-700">
+              Manage bills and repeating payments.
+            </p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Helps you stay ahead of fixed costs and ensures you never miss a subscription or utility deadline.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-[#dfb6e6] bg-[#fff5fe] p-6 shadow-soft md:col-span-2 xl:col-span-1">
+            <div class="inline-flex rounded-[1.25rem] bg-[#f1d8f5] p-3 text-[#a127bf]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 4.5a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15Zm-.75 1.56v11.88a6 6 0 0 1 0-11.88Zm1.5 11.88V12.75H17.94a6.01 6.01 0 0 1-5.19 5.19Zm0-6.69V6.06a6.01 6.01 0 0 1 5.19 5.19h-5.19Z" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <h3 class="text-xl font-bold text-[#a127bf]">Budget</h3>
+            </div>
+            <p class="mt-3 text-sm font-semibold leading-7 text-slate-700">
+              Set spending limits by category.
+            </p>
+            <p class="mt-3 text-sm leading-7 text-slate-600">
+              Helps you prevent overspending by giving you a clear stop sign for different parts of your lifestyle.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Media showcase section -->
+      <section id="media-showcase" class="border-y border-slate-200/70 bg-white/80">
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Media Showcase</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">See Cashwise in motion and screen by screen</h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600">
+              Browse guided video previews first, then explore the app interface through a dedicated screenshot gallery.
+            </p>
+          </div>
+
+          <div id="media-videos" class="mt-12">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-mint">Videos</p>
+                <h3 class="mt-2 text-2xl font-bold tracking-tight text-ink">Quick product demos</h3>
+              </div>
+            </div>
+
+            <div class="mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:thin]">
+              <article class="min-w-[300px] max-w-[360px] flex-1 snap-start rounded-[2rem] border border-line bg-white p-4 shadow-soft sm:min-w-[340px]">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-950">
+                  <video
+                    class="aspect-[9/16] h-full w-full object-contain bg-slate-950"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/images/04.jpg"
+                  >
+                    <source src="assets/videos/55.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="mt-4 px-1">
+                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Video 1</p>
+                  <h4 class="mt-2 text-xl font-bold text-ink">Main app walkthrough</h4>
+                  <p class="mt-2 text-sm leading-7 text-slate-600">
+                    A quick overview of the Cashwise experience, focused on navigation, cards, and everyday money tracking.
+                  </p>
+                </div>
+              </article>
+
+              <article class="min-w-[300px] max-w-[360px] flex-1 snap-start rounded-[2rem] border border-line bg-white p-4 shadow-soft sm:min-w-[340px]">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-950">
+                  <video
+                    class="aspect-[9/16] h-full w-full object-contain bg-slate-950"
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="assets/images/03.jpg"
+                  >
+                    <source src="assets/videos/cashbook-cards-explanation.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="mt-4 px-1">
+                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Video 2</p>
+                  <h4 class="mt-2 text-xl font-bold text-ink">Cashbook cards explained</h4>
+                  <p class="mt-2 text-sm leading-7 text-slate-600">
+                    A focused preview of how Cashbook cards work and how users can understand their financial setup at a glance.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div id="media-screenshots" class="mt-16">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Screenshots</p>
+                <h3 class="mt-2 text-2xl font-bold tracking-tight text-ink">A closer look at the interface</h3>
+              </div>
+              <p class="max-w-md text-sm leading-7 text-slate-500">
+                Explore key screens including setup, card creation, recurring expenses, settings, and notifications.
+              </p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
+                <img
+                  src="assets/images/ll.webp"
+                  alt="CashWise add new card screen showing Cash Book, Spending, Savings, Recurring Expense, and Budget card options"
+                  class="h-full w-full object-contain bg-slate-50 p-2"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
+                <img
+                  src="assets/images/02.jpg"
+                  alt="CashWise language selection screen with multilingual options"
+                  class="h-full w-full object-contain bg-slate-50 p-2"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
+                <img
+                  src="assets/images/01.jpg"
+                  alt="CashWise settings and user guide screen"
+                  class="h-full w-full object-contain bg-slate-50 p-2"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
+                <img
+                  src="assets/images/06.jpg"
+                  alt="CashWise recurring expense cards screen with payment schedules"
+                  class="h-full w-full object-contain bg-slate-50 p-2"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
+                <img
+                  src="assets/images/04.jpg"
+                  alt="CashWise home screen showing colored cash book cards and balances"
+                  class="h-full w-full object-contain bg-slate-50 p-2"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="aspect-[16/9] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft sm:col-span-2 xl:col-span-1 xl:aspect-[9/16]">
+                <img
+                  src="assets/images/08.jpg"
+                  alt="CashWise notifications screen highlighting reminders and alerts"
+                  class="h-full w-full object-contain bg-slate-50 p-2"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing section -->
+      <section id="pricing" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-ocean">Pricing</p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Choose the plan that fits you</h2>
+          <p class="mt-4 text-lg leading-8 text-slate-600">
+            Free includes 1 free Cashbook plus ad-based 7-day card unlocks that can be activated again anytime by watching another ad. Premium plans remove limits and give unlimited access.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <article class="rounded-3xl border border-[#d9c8bc] bg-[#fbf6f2] p-8 shadow-soft">
+            <div class="inline-flex rounded-2xl bg-[#efe4dc] p-3 text-[#6c4b3b]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 1.5a3.75 3.75 0 0 0-3.75 3.75V7.5H7.5A2.25 2.25 0 0 0 5.25 9.75v9A2.25 2.25 0 0 0 7.5 21h9a2.25 2.25 0 0 0 2.25-2.25v-9A2.25 2.25 0 0 0 16.5 7.5h-.75V5.25A3.75 3.75 0 0 0 12 1.5Zm-2.25 6V5.25a2.25 2.25 0 1 1 4.5 0V7.5h-4.5Z" />
+              </svg>
+            </div>
+            <p class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Free Plan</p>
+            <h3 class="mt-3 text-2xl font-bold text-ink">Start with the essentials</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">1 free Cashbook plus limited rewarded unlocks for extra card access.</p>
+            <p class="mt-6 text-4xl font-extrabold tracking-tight text-ink">Free</p>
+            <p class="mt-2 text-sm text-slate-500">Current entry plan</p>
+            <ul class="mt-8 space-y-3 text-sm leading-7 text-slate-600">
+              <li>1 free Cashbook</li>
+              <li>1 rewarded Cashbook unlock</li>
+              <li>1 ad unlock for each card type</li>
+              <li>Each rewarded unlock stays active for 7 days</li>
+              <li>You can unlock the same card type again anytime by watching another ad</li>
+            </ul>
+            <p class="mt-6 text-sm leading-7 text-slate-500">When a 7-day unlock expires, you can relock access again anytime by watching another ad, or upgrade to Premium for unlimited cards and unrestricted access.</p>
+          </article>
+
+          <article class="rounded-3xl border border-[#a8d7a6] bg-[#f5fbef] p-8 shadow-soft">
+            <div class="inline-flex rounded-2xl bg-[#e5f6dd] p-3 text-[#43a047]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M6.75 2.25a.75.75 0 0 1 .75.75v.75h9V3a.75.75 0 0 1 1.5 0v.75h.75A2.25 2.25 0 0 1 21 6v12.75A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V6a2.25 2.25 0 0 1 2.25-2.25H6V3a.75.75 0 0 1 .75-.75ZM4.5 9.75v9a.75.75 0 0 0 .75.75h13.5a.75.75 0 0 0 .75-.75v-9H4.5Z" />
+              </svg>
+            </div>
+            <p class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-[#43a047]">1 Year Plan</p>
+            <h3 class="mt-3 text-2xl font-bold text-ink">Unlimited access for 1 year</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-700">Unlock unlimited Cashbooks and cards for one full year.</p>
+            <p class="mt-6 text-5xl font-extrabold tracking-tight text-[#43a047]">DZD 675.00</p>
+            <p class="mt-2 text-sm text-slate-600">Subscription · Auto-renews yearly</p>
+            <ul class="mt-8 space-y-3 text-sm leading-7 text-slate-700">
+              <li>Unlimited Cashbooks</li>
+              <li>Unlimited Spending Cards</li>
+              <li>Unlimited Savings Cards</li>
+              <li>Unlimited Recurring Expense Cards</li>
+              <li>Unlimited Budget Cards</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-full bg-[#43a047] px-5 py-3 font-semibold text-white transition hover:bg-[#2e7d32]">
+              Upgrade for 1 Year
+            </a>
+          </article>
+
+          <article class="relative rounded-3xl border-2 border-[#f8b400] bg-[#fff7e6] p-8 shadow-soft">
+            <span class="absolute right-6 top-6 rounded-full bg-[#f8b400] px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white">Recommended</span>
+            <div class="inline-flex rounded-2xl bg-[#ffe8ab] p-3 text-[#f0a000]">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M11.103 3.21a1.125 1.125 0 0 1 1.794 0l1.566 2.016a1.125 1.125 0 0 0 .855.433l2.534.12a1.125 1.125 0 0 1 .975 1.563l-.87 2.383a1.125 1.125 0 0 0 .114.952l1.41 2.11a1.125 1.125 0 0 1-.28 1.56l-2.073 1.465a1.125 1.125 0 0 0-.462.84l-.348 2.513a1.125 1.125 0 0 1-1.452.91l-2.41-.783a1.125 1.125 0 0 0-.952 0l-2.41.783a1.125 1.125 0 0 1-1.452-.91l-.348-2.513a1.125 1.125 0 0 0-.462-.84L4.8 14.347a1.125 1.125 0 0 1-.28-1.56l1.41-2.11a1.125 1.125 0 0 0 .114-.952l-.87-2.383a1.125 1.125 0 0 1 .975-1.563l2.534-.12a1.125 1.125 0 0 0 .855-.433l1.566-2.016Z" />
+              </svg>
+            </div>
+            <p class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-[#f0a000]">Best Offer</p>
+            <h3 class="mt-3 text-2xl font-bold text-ink">Lifetime access</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-700">Unlimited Cashbooks and cards forever with a one-time purchase.</p>
+            <p class="mt-6 text-5xl font-extrabold tracking-tight text-[#f0a000]">DZD 1,325.00</p>
+            <p class="mt-2 text-sm text-slate-600">One-time purchase · Never expires</p>
+            <ul class="mt-8 space-y-3 text-sm leading-7 text-slate-700">
+              <li>Unlimited Cashbooks</li>
+              <li>Unlimited Spending Cards</li>
+              <li>Unlimited Savings Cards</li>
+              <li>Unlimited Recurring Expense Cards</li>
+              <li>Unlimited Budget Cards</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-full bg-[#f8b400] px-5 py-3 font-semibold text-white transition hover:bg-[#e09a00]">
+              Get Lifetime Access
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact section -->
+      <section id="contact" class="bg-ink text-white">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:px-8 lg:py-20">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Contact</p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Contact Cashwise: Track Money Wisely</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              For support, privacy requests, business inquiries, or verification needs, reach us through the contact options below.
+            </p>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Support</p>
+            <p class="mt-4 text-xl font-semibold">hichamfriends23@gmail.com</p>
+            <div class="mt-6 border-t border-white/10 pt-6">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Social Media</p>
+              <div class="mt-4 flex flex-col gap-3">
+                <a href="https://www.youtube.com/@CashWiseTrackMoneyWisely" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-red-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.55 15.7V8.3L15.82 12l-6.27 3.7Z" />
+                  </svg>
+                  YouTube Channel
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61581185162232" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-sky-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.98h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z" />
+                  </svg>
+                  Facebook Page
+                </a>
+              </div>
+            </div>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="mailto:hichamfriends23@gmail.com" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 font-semibold text-ink transition hover:bg-slate-100">
+                Email Support
+              </a>
+              <a href="privacy-policy.html" class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
+                Read Privacy Policy
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer with verification requirements -->
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-slate-500 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <p>&copy; 2026 Hicham-Dev. All rights reserved.</p>
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+          <a href="mailto:hichamfriends23@gmail.com" class="transition hover:text-ocean">hichamfriends23@gmail.com</a>
+          <a href="https://www.youtube.com/@CashWiseTrackMoneyWisely" target="_blank" rel="noopener noreferrer" class="inline-flex items-center transition hover:text-ocean">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-red-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.55 15.7V8.3L15.82 12l-6.27 3.7Z" />
+            </svg>
+            YouTube
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61581185162232" target="_blank" rel="noopener noreferrer" class="inline-flex items-center transition hover:text-ocean">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-sky-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.98h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z" />
+            </svg>
+            Facebook
+          </a>
+          <a href="privacy-policy.html" class="font-semibold text-ocean transition hover:text-sky-900">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const watchVideoButton = document.getElementById("watch-video");
+
+      menuToggle.addEventListener("click", function () {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      watchVideoButton.addEventListener("click", function () {
+        const videoSection = document.getElementById("media-videos");
+        if (videoSection) {
+          videoSection.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          const firstVideo = videoSection.querySelector("video");
+          if (!firstVideo) {
+            return;
+          }
+
+          firstVideo.play().catch(function () {
+            return undefined;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
