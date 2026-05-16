@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cashwise: Track Money Wisely</title>
+    <title>CashWise: Track Money Wisely</title>
     <meta
       name="description"
       content="CashWise is a digital ledger and cash book app built to help users track expenses, manage records, and stay in control of money with confidence."
@@ -12,7 +12,7 @@
       name="keywords"
       content="CashWise, digital ledger, cash book app, finance tracking, Android budgeting"
     />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#8b5e3c" />
     <link rel="icon" type="image/png" href="assets/icons/playstore.png" />
     <link rel="stylesheet" href="assets/styles/tailwind.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,15 +28,15 @@
 
       :root {
         color-scheme: light;
-        --brand-gradient: linear-gradient(135deg, #0b3b66 0%, #059669 55%, #38bdf8 100%);
-        --brand-surface: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(239, 246, 255, 0.88));
+        --brand-gradient: linear-gradient(135deg, #8b5e3c 0%, #a97956 55%, #d6b08b 100%);
+        --brand-surface: linear-gradient(135deg, rgba(255, 249, 242, 0.98), rgba(255, 237, 210, 0.92));
       }
 
       body {
         font-family: "Inter", sans-serif;
         background:
-          radial-gradient(circle at top left, rgba(5, 150, 105, 0.1), transparent 30%),
-          linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+          radial-gradient(circle at top left, rgba(255, 212, 156, 0.34), transparent 32%),
+          linear-gradient(180deg, #ffe5b4 0%, #fff9f2 28%, #ffffff 100%);
       }
 
       .display-font {
@@ -48,14 +48,14 @@
         align-items: center;
         gap: 0.65rem;
         border-radius: 9999px;
-        border: 1px solid rgba(11, 59, 102, 0.12);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(219, 234, 254, 0.92));
+        border: 1px solid rgba(139, 94, 60, 0.14);
+        background: linear-gradient(135deg, rgba(255, 249, 242, 0.98), rgba(255, 239, 220, 0.94));
         padding: 0.45rem 0.9rem;
         font-size: 0.72rem;
         font-weight: 800;
         letter-spacing: 0.24em;
         text-transform: uppercase;
-        color: #0b3b66;
+        color: #8b5e3c;
         box-shadow: 0 14px 30px -24px rgba(15, 23, 42, 0.5);
       }
 
@@ -64,7 +64,7 @@
         width: 0.55rem;
         height: 0.55rem;
         border-radius: 9999px;
-        background: linear-gradient(135deg, #059669, #0b3b66);
+        background: linear-gradient(135deg, #a97956, #8b5e3c);
       }
 
       .section-heading {
@@ -81,7 +81,7 @@
         width: 4.5rem;
         height: 0.3rem;
         border-radius: 9999px;
-        background: linear-gradient(90deg, #059669 0%, #38bdf8 100%);
+        background: linear-gradient(90deg, #a97956 0%, #d6b08b 100%);
       }
 
       .section-heading.centered::after {
@@ -92,8 +92,8 @@
       .brand-mark {
         position: relative;
         overflow: hidden;
-        border: 1px solid rgba(11, 59, 102, 0.1);
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(219, 234, 254, 0.9));
+        border: 1px solid rgba(139, 94, 60, 0.14);
+        background: linear-gradient(135deg, rgba(255, 250, 244, 0.98), rgba(255, 235, 207, 0.92));
       }
 
       .brand-mark::after {
@@ -103,7 +103,7 @@
         width: 2.6rem;
         height: 2.6rem;
         border-radius: 9999px;
-        background: rgba(56, 189, 248, 0.2);
+        background: rgba(214, 176, 139, 0.28);
         filter: blur(10px);
       }
 
@@ -121,7 +121,7 @@
         align-items: center;
         border-radius: 9999px;
         padding: 0.55rem 0.95rem;
-        color: #334155;
+        color: #5b4938;
         transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
       }
 
@@ -140,8 +140,8 @@
       }
 
       .appbar-link:hover {
-        color: #0b3b66;
-        background: rgba(255, 255, 255, 0.72);
+        color: #8b5e3c;
+        background: rgba(255, 248, 240, 0.88);
         transform: translateY(-1px);
       }
 
@@ -151,33 +151,33 @@
       }
 
       .appbar-link:focus-visible {
-        outline: 2px solid rgba(56, 189, 248, 0.45);
+        outline: 2px solid rgba(169, 121, 86, 0.35);
         outline-offset: 3px;
       }
 
       .mobile-appbar-link {
         border: 1px solid transparent;
-        background: linear-gradient(135deg, rgba(248, 250, 252, 0.92), rgba(239, 246, 255, 0.82));
+        background: linear-gradient(135deg, rgba(255, 249, 242, 0.96), rgba(247, 231, 213, 0.9));
         transition: border-color 180ms ease, color 180ms ease, transform 180ms ease, background-color 180ms ease;
       }
 
       .mobile-appbar-link:hover {
-        border-color: rgba(56, 189, 248, 0.25);
-        color: #0b3b66;
+        border-color: rgba(169, 121, 86, 0.24);
+        color: #8b5e3c;
         transform: translateX(4px);
       }
 
       .nav-shell {
         border: 1px solid rgba(255, 255, 255, 0.72);
         background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7)),
-          linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(5, 150, 105, 0.08));
+          linear-gradient(135deg, rgba(255, 251, 247, 0.9), rgba(255, 243, 228, 0.78)),
+          linear-gradient(135deg, rgba(214, 176, 139, 0.18), rgba(255, 214, 168, 0.16));
         box-shadow: 0 22px 55px -34px rgba(15, 23, 42, 0.45);
       }
 
       .appbar-nav {
-        border: 1px solid rgba(226, 232, 240, 0.9);
-        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(222, 200, 179, 0.9);
+        background: rgba(255, 251, 247, 0.74);
       }
 
       .brand-subtitle {
@@ -185,7 +185,7 @@
         font-weight: 700;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #64748b;
+        color: #8a7463;
       }
 
       .nav-badge {
@@ -193,14 +193,14 @@
         align-items: center;
         gap: 0.45rem;
         border-radius: 9999px;
-        border: 1px solid rgba(11, 59, 102, 0.08);
+        border: 1px solid rgba(139, 94, 60, 0.12);
         background: var(--brand-surface);
         padding: 0.5rem 0.85rem;
         font-size: 0.72rem;
         font-weight: 800;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: #0b3b66;
+        color: #8b5e3c;
       }
 
       .nav-badge::before {
@@ -208,11 +208,11 @@
         width: 0.45rem;
         height: 0.45rem;
         border-radius: 9999px;
-        background: linear-gradient(135deg, #059669, #38bdf8);
+        background: linear-gradient(135deg, #a97956, #d6b08b);
       }
 
       .nav-play-button {
-        box-shadow: 0 18px 35px -24px rgba(5, 150, 105, 0.85);
+        box-shadow: 0 18px 35px -24px rgba(139, 94, 60, 0.5);
       }
 
       .theme-toggle {
@@ -222,15 +222,15 @@
         width: 3rem;
         height: 3rem;
         border-radius: 9999px;
-        border: 1px solid rgba(11, 59, 102, 0.1);
+        border: 1px solid rgba(139, 94, 60, 0.14);
         background: var(--brand-surface);
-        color: #0b3b66;
+        color: #8b5e3c;
         transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
       }
 
       .theme-toggle:hover {
         transform: translateY(-1px);
-        color: #0f172a;
+        color: #2f2116;
       }
 
       .theme-toggle svg {
@@ -261,14 +261,14 @@
         align-items: center;
         gap: 0.75rem;
         border-radius: 9999px;
-        border: 1px solid rgba(16, 185, 129, 0.18);
-        background: linear-gradient(135deg, rgba(236, 253, 245, 0.98), rgba(239, 246, 255, 0.94));
+        border: 1px solid rgba(169, 121, 86, 0.2);
+        background: linear-gradient(135deg, rgba(255, 248, 240, 0.98), rgba(255, 234, 205, 0.94));
         padding: 0.55rem 1rem;
         font-size: 0.78rem;
         font-weight: 800;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #0b3b66;
+        color: #8b5e3c;
         box-shadow: 0 14px 35px -28px rgba(15, 23, 42, 0.5);
       }
 
@@ -277,14 +277,14 @@
         width: 0.6rem;
         height: 0.6rem;
         border-radius: 9999px;
-        background: linear-gradient(135deg, #059669, #38bdf8);
+        background: linear-gradient(135deg, #a97956, #d6b08b);
       }
 
       .hero-panel {
-        border: 1px solid rgba(219, 234, 254, 0.9);
+        border: 1px solid rgba(222, 200, 179, 0.9);
         background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88)),
-          linear-gradient(135deg, rgba(56, 189, 248, 0.05), rgba(5, 150, 105, 0.06));
+          linear-gradient(135deg, rgba(255, 251, 247, 0.98), rgba(255, 240, 219, 0.9)),
+          linear-gradient(135deg, rgba(214, 176, 139, 0.08), rgba(255, 214, 168, 0.09));
         box-shadow: 0 28px 70px -38px rgba(15, 23, 42, 0.42);
       }
 
@@ -298,7 +298,7 @@
         padding: 0.55rem 0.85rem;
         font-size: 0.84rem;
         font-weight: 600;
-        color: #334155;
+        color: #5b4938;
       }
 
       .hero-proof::before {
@@ -306,11 +306,11 @@
         width: 0.45rem;
         height: 0.45rem;
         border-radius: 9999px;
-        background: linear-gradient(135deg, #059669, #0b3b66);
+        background: linear-gradient(135deg, #a97956, #8b5e3c);
       }
 
       .hero-primary-cta {
-        box-shadow: 0 22px 45px -28px rgba(11, 59, 102, 0.8);
+        box-shadow: 0 22px 45px -28px rgba(139, 94, 60, 0.48);
       }
 
       .hero-primary-cta:hover {
@@ -322,17 +322,17 @@
       }
 
       body:not(.theme-dark) #home .hero-secondary-cta {
-        border-color: rgb(203, 213, 225) !important;
+        border-color: rgb(222, 200, 179) !important;
         background: none !important;
-        background-color: rgb(255, 255, 255) !important;
-        color: rgb(51, 65, 85) !important;
+        background-color: rgb(255, 251, 247) !important;
+        color: rgb(68, 50, 36) !important;
       }
 
       body:not(.theme-dark) #home .hero-secondary-cta:hover {
-        border-color: rgb(11, 59, 102) !important;
+        border-color: rgb(169, 121, 86) !important;
         background: none !important;
-        background-color: rgb(255, 255, 255) !important;
-        color: rgb(11, 59, 102) !important;
+        background-color: rgb(255, 244, 233) !important;
+        color: rgb(139, 94, 60) !important;
       }
 
       .js-ready .animate-on-scroll {
@@ -380,8 +380,8 @@
         color-scheme: dark;
         --brand-surface: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
         background:
-          radial-gradient(circle at top left, rgba(5, 150, 105, 0.18), transparent 30%),
-          linear-gradient(180deg, #020617 0%, #0f172a 100%);
+          radial-gradient(circle at top left, rgba(169, 121, 86, 0.22), transparent 30%),
+          linear-gradient(180deg, #1f150f 0%, #2f2116 100%);
       }
 
       body.theme-dark .section-label {
@@ -407,7 +407,7 @@
         border-color: rgba(51, 65, 85, 0.95);
         background:
           linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.8)),
-          linear-gradient(135deg, rgba(14, 165, 233, 0.14), rgba(5, 150, 105, 0.1));
+          linear-gradient(135deg, rgba(214, 176, 139, 0.18), rgba(169, 121, 86, 0.14));
         box-shadow: 0 22px 55px -34px rgba(2, 6, 23, 0.9);
       }
 
@@ -425,7 +425,7 @@
       }
 
       body.theme-dark .appbar-link:hover {
-        color: #e0f2fe;
+        color: #fff4e7;
         background: rgba(15, 23, 42, 0.72);
       }
 
@@ -468,8 +468,8 @@
       }
 
       body.theme-dark #home .hero-secondary-cta:hover {
-        border-color: rgba(56, 189, 248, 0.45) !important;
-        color: #e0f2fe !important;
+        border-color: rgba(214, 176, 139, 0.45) !important;
+        color: #fff4e7 !important;
         background: none !important;
         background-color: rgba(15, 23, 42, 0.98) !important;
       }
@@ -551,9 +551,9 @@
     <header class="sticky top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
       <div class="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-[1.75rem] px-4 py-3 backdrop-blur-xl sm:px-6">
         <a href="#home" class="flex items-center gap-3 text-ink">
-          <img src="assets/icons/playstore.png" alt="Cashwise app icon" class="brand-mark h-10 w-10 rounded-2xl shadow-sm" />
+          <img src="assets/icons/playstore.png" alt="CashWise app icon" class="brand-mark h-10 w-10 rounded-2xl shadow-sm" />
           <span class="flex flex-col">
-            <span class="brand-title display-font text-base font-extrabold tracking-tight sm:text-xl">Cashwise</span>
+            <span class="brand-title display-font text-base font-extrabold tracking-tight sm:text-xl">CashWise</span>
             <span class="brand-subtitle">Track Money Wisely</span>
           </span>
         </a>
@@ -575,12 +575,11 @@
             </svg>
           </button>
           <div class="hidden items-center gap-3 md:flex">
-            <span class="nav-badge">Official Site</span>
             <a
               href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
               target="_blank"
               rel="noopener noreferrer"
-              class="nav-play-button inline-flex items-center rounded-full bg-mint px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              class="nav-play-button inline-flex items-center rounded-full bg-ocean px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#a97956]"
             >
               Get it on Google Play
             </a>
@@ -607,7 +606,7 @@
           <a href="#pricing" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Pricing</a>
           <a href="privacy-policy.html" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Privacy Policy</a>
           <a href="#contact" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Contact</a>
-          <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-full bg-mint px-4 py-3 text-center font-semibold text-white">Get it on Google Play</a>
+          <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-full bg-ocean px-4 py-3 text-center font-semibold text-white transition hover:bg-[#a97956]">Get it on Google Play</a>
         </div>
       </div>
     </header>
@@ -615,14 +614,14 @@
     <main id="home">
       <!-- Hero section -->
       <section class="relative overflow-hidden">
-        <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[30rem] bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.14),_transparent_34%),radial-gradient(circle_at_80%_18%,_rgba(5,150,105,0.14),_transparent_28%)]"></div>
+        <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[30rem] bg-[radial-gradient(circle_at_top_left,_rgba(255,214,168,0.28),_transparent_34%),radial-gradient(circle_at_80%_18%,_rgba(169,121,86,0.16),_transparent_28%)]"></div>
         <div class="mx-auto grid max-w-7xl gap-14 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
           <div class="max-w-2xl">
             <span class="hero-kicker">
               Built for modern households and small businesses
             </span>
             <h1 class="display-font mt-6 max-w-2xl text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-ink sm:text-6xl lg:text-7xl">
-              Build a calmer money routine with <span class="hero-accent">Cashwise</span>.
+              Build a calmer money routine with <span class="hero-accent">CashWise</span>.
             </h1>
             <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
               A polished digital ledger and cash book app for tracking spending, recurring costs, savings goals, and day-to-day balance with less friction.
@@ -634,7 +633,7 @@
                   href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="hero-primary-cta inline-flex items-center justify-center rounded-full bg-ocean px-6 py-4 text-base font-semibold text-white transition hover:bg-sky-900"
+                  class="hero-primary-cta inline-flex items-center justify-center rounded-full bg-ocean px-6 py-4 text-base font-semibold text-white transition hover:bg-[#a97956]"
                 >
                   Download on Google Play
                 </a>
@@ -655,8 +654,8 @@
           </div>
 
           <div class="relative">
-            <div class="absolute -left-6 top-10 hidden h-24 w-24 rounded-full bg-emerald-100 blur-2xl sm:block"></div>
-            <div class="absolute -right-2 bottom-6 hidden h-28 w-28 rounded-full bg-sky-100 blur-2xl sm:block"></div>
+            <div class="absolute -left-6 top-10 hidden h-24 w-24 rounded-full bg-[#f4d7b8] blur-2xl sm:block"></div>
+            <div class="absolute -right-2 bottom-6 hidden h-28 w-28 rounded-full bg-[#f8e8d6] blur-2xl sm:block"></div>
 
             <div class="relative z-10 rounded-3xl border border-line bg-white p-4 shadow-soft">
               <div class="rounded-3xl bg-slate-950 p-3">
@@ -788,7 +787,7 @@
         <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div class="max-w-3xl">
             <p class="section-label animate-on-scroll">Media Showcase</p>
-            <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">See Cashwise in motion and screen by screen</h2>
+            <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">See CashWise in motion and screen by screen</h2>
             <p class="mt-4 text-lg leading-8 text-slate-600">
               Browse guided video previews first, then explore the app interface through a dedicated screenshot gallery.
             </p>
@@ -819,7 +818,7 @@
                   <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Video 1</p>
                   <h4 class="mt-2 text-xl font-bold text-ink">Main app walkthrough</h4>
                   <p class="mt-2 text-sm leading-7 text-slate-600">
-                    A quick overview of the Cashwise experience, focused on navigation, cards, and everyday money tracking.
+                    A quick overview of the CashWise experience, focused on navigation, cards, and everyday money tracking.
                   </p>
                 </div>
               </article>
@@ -848,12 +847,10 @@
           </div>
 
           <div id="media-screenshots" class="mt-16">
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p class="section-label animate-on-scroll">Screenshots</p>
-                <h3 class="section-heading animate-on-scroll animate-delay mt-4 text-2xl font-bold tracking-tight text-ink">A closer look at the interface</h3>
-              </div>
-              <p class="max-w-md text-sm leading-7 text-slate-500">
+            <div class="max-w-3xl">
+              <p class="section-label animate-on-scroll">Screenshots</p>
+              <h3 class="section-heading animate-on-scroll animate-delay mt-4 text-2xl font-bold tracking-tight text-ink">A closer look at the interface</h3>
+              <p class="mt-4 text-lg leading-8 text-slate-600">
                 Explore key screens including setup, card creation, recurring expenses, settings, and notifications.
               </p>
             </div>
@@ -1001,7 +998,7 @@
         <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.4fr_1fr] lg:px-8 lg:py-20">
           <div>
             <p class="section-label animate-on-scroll">Contact</p>
-            <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Contact Cashwise: Track Money Wisely</h2>
+            <h2 class="section-heading animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Contact CashWise: Track Money Wisely</h2>
             <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
               For support, privacy requests, business inquiries, or verification needs, reach us through the contact options below.
             </p>
@@ -1014,21 +1011,21 @@
               <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Social Media</p>
               <div class="mt-4 flex flex-col gap-3">
                 <a href="https://www.youtube.com/@CashWiseTrackMoneyWisely" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-red-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-[#f2cfaf]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.55 15.7V8.3L15.82 12l-6.27 3.7Z" />
                   </svg>
                   YouTube Channel
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61581185162232" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-sky-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-[#e7bf9f]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.98h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z" />
                   </svg>
                   Facebook Page
                 </a>
               </div>
             </div>
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="privacy-policy.html" class="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
+            <div class="mt-8 flex flex-col gap-3">
+              <a href="privacy-policy.html" class="flex w-full items-center justify-center rounded-full border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 h-5 w-5 text-slate-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2.25a.75.75 0 0 1 .32.072l7.5 3.5a.75.75 0 0 1 .43.678v5.287c0 4.595-2.86 8.705-7.177 10.313a3.23 3.23 0 0 1-2.146 0C6.61 20.492 3.75 16.382 3.75 11.787V6.5a.75.75 0 0 1 .43-.678l7.5-3.5A.75.75 0 0 1 12 2.25Zm0 4.5a2.625 2.625 0 0 0-2.625 2.625v1.125h-.375A1.875 1.875 0 0 0 7.125 12.375v3A1.875 1.875 0 0 0 9 17.25h6a1.875 1.875 0 0 0 1.875-1.875v-3A1.875 1.875 0 0 0 15 10.5h-.375V9.375A2.625 2.625 0 0 0 12 6.75Zm-1.125 3.75V9.375a1.125 1.125 0 1 1 2.25 0V10.5h-2.25Z" />
                 </svg>
@@ -1047,18 +1044,18 @@
         <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
           <a href="mailto:hichamfriends23@gmail.com" class="transition hover:text-ocean">hichamfriends23@gmail.com</a>
           <a href="https://www.youtube.com/@CashWiseTrackMoneyWisely" target="_blank" rel="noopener noreferrer" class="inline-flex items-center transition hover:text-ocean">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-red-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-[#b88356]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.56 9.38.56 9.38.56s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.55 15.7V8.3L15.82 12l-6.27 3.7Z" />
             </svg>
             YouTube
           </a>
           <a href="https://www.facebook.com/profile.php?id=61581185162232" target="_blank" rel="noopener noreferrer" class="inline-flex items-center transition hover:text-ocean">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-sky-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4 text-[#8b5e3c]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.98h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07Z" />
             </svg>
             Facebook
           </a>
-          <a href="privacy-policy.html" class="font-semibold text-ocean transition hover:text-sky-900">Privacy Policy</a>
+          <a href="privacy-policy.html" class="font-semibold text-ocean transition hover:text-[#a97956]">Privacy Policy</a>
         </div>
       </div>
     </footer>
@@ -1092,9 +1089,9 @@
             watchVideoButton.style.borderColor = "rgba(71, 85, 105, 0.9)";
             watchVideoButton.style.backgroundImage = "none";
           } else {
-            watchVideoButton.style.backgroundColor = "rgb(255, 255, 255)";
-            watchVideoButton.style.color = "rgb(51, 65, 85)";
-            watchVideoButton.style.borderColor = "rgb(203, 213, 225)";
+            watchVideoButton.style.backgroundColor = "rgb(255, 251, 247)";
+            watchVideoButton.style.color = "rgb(68, 50, 36)";
+            watchVideoButton.style.borderColor = "rgb(222, 200, 179)";
             watchVideoButton.style.backgroundImage = "none";
           }
         }

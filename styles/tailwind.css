@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		color: #2f2116;
+	}
+}
+
+@layer utilities {
+	.border-line {
+		border-color: #dec8b3;
+	}
+
+	.bg-ink {
+		background-color: #2f2116;
+	}
+
+	.bg-mint {
+		background-color: #8b5e3c;
+	}
+
+	.bg-ocean {
+		background-color: #8b5e3c;
+	}
+
+	.bg-slate-50 {
+		background-color: #fff9f2;
+	}
+
+	.text-ink {
+		color: #2f2116;
+	}
+
+	.text-ocean {
+		color: #8b5e3c;
+	}
+
+	.text-slate-400 {
+		color: #8a7463;
+	}
+
+	.text-slate-500 {
+		color: #746352;
+	}
+
+	.text-slate-600 {
+		color: #5b4938;
+	}
+
+	.text-slate-700 {
+		color: #443224;
+	}
+
+	.text-slate-800,
+	.text-slate-900 {
+		color: #2f2116;
+	}
+
+	.hover\:border-ocean:hover {
+		border-color: #8b5e3c;
+	}
+
+	.hover\:bg-emerald-700:hover,
+	.hover\:bg-sky-900:hover {
+		background-color: #a97956;
+	}
+
+	.hover\:text-ocean:hover,
+	.hover\:text-sky-900:hover,
+	.hover\:text-sky-950:hover {
+		color: #8b5e3c;
+	}
+}

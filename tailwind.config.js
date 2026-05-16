@@ -5,11 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#0f172a",
-        ocean: "#0b3b66",
-        mint: "#059669",
-        mist: "#f8fafc",
-        line: "#dbe4ef"
+        ink: "#2f2116",
+        ocean: "#8b5e3c",
+        mint: "#a97956",
+        mist: "#fff9f2",
+        line: "#dec8b3"
       },
       boxShadow: {
         soft: "0 20px 45px -25px rgba(15, 23, 42, 0.28)"
