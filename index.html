@@ -910,7 +910,7 @@
       </section>
 
       <!-- Pricing section -->
-      <section id="pricing" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section id="pricing" class="mx-auto max-w-7xl scroll-mt-32 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div class="max-w-3xl mx-auto text-center">
           <p class="section-label animate-on-scroll">Pricing</p>
           <h2 class="section-heading centered animate-on-scroll animate-delay mt-4 text-3xl font-bold tracking-tight text-ink sm:text-4xl">Choose the plan that fits you</h2>
@@ -919,7 +919,7 @@
           </p>
         </div>
 
-        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           <article class="animate-card-on-scroll rounded-3xl border border-[#d9c8bc] bg-[#fbf6f2] p-8 shadow-soft">
             <div class="inline-flex rounded-2xl bg-[#efe4dc] p-3 text-[#6c4b3b]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -944,7 +944,70 @@
             <p class="mt-6 text-sm leading-7 text-slate-500">When a 7-day unlock expires, you can relock access again anytime by watching another ad, or upgrade to Premium for unlimited cards and unrestricted access.</p>
           </article>
 
-          <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#a8d7a6] bg-[#f5fbef] p-8 shadow-soft">
+          <!-- Monthly Plan -->
+          <article class="animate-card-on-scroll card-delay-1 relative flex h-full flex-col overflow-hidden rounded-[2rem] border-[3px] border-[#4ea3f1] bg-[linear-gradient(180deg,#fbfbfb_0%,#f2f5f8_100%)] p-8 shadow-[0_24px_60px_-34px_rgba(78,163,241,0.45)]">
+            <span class="absolute right-6 top-6 rounded-full bg-[#ff6a3d] px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-[#ff6a3d]/20">Most Popular</span>
+            <div class="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-[#dcebfb] text-[#2f86de] shadow-inner shadow-white/70">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm0 2.25a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm0 2.25a.75.75 0 0 0-.75.75v4.81c0 .25.124.485.331.625l3.375 2.295a.75.75 0 0 0 .843-1.24l-3.049-2.074V7.5A.75.75 0 0 0 12 6.75Z" />
+              </svg>
+            </div>
+            <p class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-[#2f86de]">Monthly Plan</p>
+            <h3 class="mt-3 text-2xl font-bold text-ink">Unlimited Cashbooks and cards per month</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-700">A monthly premium upgrade with unlimited access.</p>
+            <div class="mt-6">
+              <p class="text-5xl font-extrabold tracking-tight text-[#2f86de]">$1</p>
+              <p class="mt-3 inline-flex rounded-2xl bg-[#dcebfb] px-4 py-2 text-sm font-semibold text-[#2f86de]">Subscription &nbsp;&bull;&nbsp; Auto-renews monthly</p>
+            </div>
+            <ul class="mt-8 flex-1 space-y-4 text-sm leading-7 text-slate-800">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#43b649] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.25 7.313a1 1 0 0 1-1.42.005l-3.75-3.75a1 1 0 0 1 1.414-1.414l3.04 3.04 6.54-6.595a1 1 0 0 1 1.42-.013Z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span>Unlimited Cashbooks</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#43b649] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.25 7.313a1 1 0 0 1-1.42.005l-3.75-3.75a1 1 0 0 1 1.414-1.414l3.04 3.04 6.54-6.595a1 1 0 0 1 1.42-.013Z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span>Unlimited Spending Cards</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#43b649] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.25 7.313a1 1 0 0 1-1.42.005l-3.75-3.75a1 1 0 0 1 1.414-1.414l3.04 3.04 6.54-6.595a1 1 0 0 1 1.42-.013Z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span>Unlimited Savings Cards</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#43b649] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.25 7.313a1 1 0 0 1-1.42.005l-3.75-3.75a1 1 0 0 1 1.414-1.414l3.04 3.04 6.54-6.595a1 1 0 0 1 1.42-.013Z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span>Unlimited Recurring Expense Cards</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#43b649] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 0 1 .006 1.414l-7.25 7.313a1 1 0 0 1-1.42.005l-3.75-3.75a1 1 0 0 1 1.414-1.414l3.04 3.04 6.54-6.595a1 1 0 0 1 1.42-.013Z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span>Unlimited Budget Cards</span>
+              </li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex w-full items-center justify-center rounded-[1.4rem] bg-[#2f86de] px-5 py-4 text-center text-lg font-semibold text-white shadow-[0_18px_30px_-18px_rgba(47,134,222,0.8)] transition hover:-translate-y-0.5 hover:bg-[#2477cb]">
+              Upgrade
+            </a>
+            <p class="mt-4 text-sm leading-7 text-slate-500">Best for users who want premium features monthly without committing to a yearly plan.</p>
+          </article>
+
+          <article class="animate-card-on-scroll card-delay-2 rounded-3xl border border-[#a8d7a6] bg-[#f5fbef] p-8 shadow-soft">
             <div class="inline-flex rounded-2xl bg-[#e5f6dd] p-3 text-[#43a047]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M6.75 2.25a.75.75 0 0 1 .75.75v.75h9V3a.75.75 0 0 1 1.5 0v.75h.75A2.25 2.25 0 0 1 21 6v12.75A2.25 2.25 0 0 1 18.75 21H5.25A2.25 2.25 0 0 1 3 18.75V6a2.25 2.25 0 0 1 2.25-2.25H6V3a.75.75 0 0 1 .75-.75ZM4.5 9.75v9a.75.75 0 0 0 .75.75h13.5a.75.75 0 0 0 .75-.75v-9H4.5Z" />
@@ -953,7 +1016,7 @@
             <p class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-[#43a047]">1 Year Plan</p>
             <h3 class="mt-3 text-2xl font-bold text-ink">Unlimited access for 1 year</h3>
             <p class="mt-4 text-sm leading-7 text-slate-700">Unlock unlimited Cashbooks and cards for one full year.</p>
-              <p class="mt-6 text-5xl font-extrabold tracking-tight text-[#43a047]">$5</p>
+              <p class="mt-6 text-5xl font-extrabold tracking-tight text-[#43a047]">$9</p>
             <p class="mt-2 text-sm text-slate-600">Subscription · Auto-renews yearly</p>
             <ul class="mt-8 space-y-3 text-sm leading-7 text-slate-700">
               <li>Unlimited Cashbooks</li>
@@ -967,7 +1030,7 @@
             </a>
           </article>
 
-          <article class="animate-card-on-scroll card-delay-2 relative rounded-3xl border-2 border-[#f8b400] bg-[#fff7e6] p-8 shadow-soft">
+          <article class="animate-card-on-scroll card-delay-3 relative rounded-3xl border-2 border-[#f8b400] bg-[#fff7e6] p-8 shadow-soft">
             <span class="absolute right-6 top-6 rounded-full bg-[#f8b400] px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-white">Recommended</span>
             <div class="inline-flex rounded-2xl bg-[#ffe8ab] p-3 text-[#f0a000]">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -977,7 +1040,7 @@
             <p class="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-[#f0a000]">Best Offer</p>
             <h3 class="mt-3 text-2xl font-bold text-ink">Lifetime access</h3>
             <p class="mt-4 text-sm leading-7 text-slate-700">Unlimited Cashbooks and cards forever with a one-time purchase.</p>
-              <p class="mt-6 text-5xl font-extrabold tracking-tight text-[#f0a000]">$10</p>
+              <p class="mt-6 text-5xl font-extrabold tracking-tight text-[#f0a000]">$20</p>
             <p class="mt-2 text-sm text-slate-600">One-time purchase · Never expires</p>
             <ul class="mt-8 space-y-3 text-sm leading-7 text-slate-700">
               <li>Unlimited Cashbooks</li>
