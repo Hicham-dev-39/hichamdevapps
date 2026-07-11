@@ -97,6 +97,113 @@
         transform: translateX(-50%);
       }
 
+      .supported-language-grid {
+        align-items: stretch;
+      }
+
+      .language-card {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        border-color: rgba(217, 194, 172, 0.92);
+        background:
+          radial-gradient(circle at top right, rgba(214, 176, 139, 0.18), transparent 34%),
+          linear-gradient(180deg, rgba(255, 252, 248, 0.98), rgba(255, 247, 239, 0.94));
+        box-shadow: 0 24px 50px -34px rgba(91, 73, 56, 0.24);
+      }
+
+      .language-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 0.3rem;
+        background: linear-gradient(90deg, rgba(169, 121, 86, 0.95), rgba(214, 176, 139, 0.9));
+      }
+
+      .language-card-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .language-card-name {
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #8b5e3c;
+      }
+
+      .language-card-title {
+        margin-top: 0.65rem;
+        max-width: 13rem;
+        line-height: 1.18;
+      }
+
+      .language-card-code {
+        flex-shrink: 0;
+        border: 1px solid rgba(169, 121, 86, 0.18);
+        background: linear-gradient(135deg, rgba(246, 231, 216, 0.98), rgba(255, 242, 228, 0.96));
+        padding: 0.5rem 0.85rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        color: #8b5e3c;
+      }
+
+      .language-card-body {
+        margin-top: 1.15rem;
+        border-top: 1px solid rgba(217, 194, 172, 0.72);
+        padding-top: 1rem;
+      }
+
+      .language-card-summary {
+        font-size: 0.95rem;
+        font-weight: 700;
+        line-height: 1.7;
+        color: #4d3728;
+      }
+
+      .language-card-description {
+        margin-top: 0.7rem;
+        font-size: 0.94rem;
+        line-height: 1.9;
+        color: #5f6875;
+      }
+
+      body.theme-dark .language-card {
+        border-color: rgba(71, 85, 105, 0.86);
+        background:
+          radial-gradient(circle at top right, rgba(169, 121, 86, 0.14), transparent 34%),
+          linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(30, 41, 59, 0.88));
+        box-shadow: 0 24px 52px -34px rgba(2, 6, 23, 0.72);
+      }
+
+      body.theme-dark .language-card-body {
+        border-top-color: rgba(71, 85, 105, 0.72);
+      }
+
+      body.theme-dark .language-card-name,
+      body.theme-dark .language-card-code {
+        color: #f8dcc0;
+      }
+
+      body.theme-dark .language-card-code {
+        border-color: rgba(214, 176, 139, 0.18);
+        background: linear-gradient(135deg, rgba(51, 65, 85, 0.88), rgba(30, 41, 59, 0.94));
+      }
+
+      body.theme-dark .language-card-summary {
+        color: #f8fafc;
+      }
+
+      body.theme-dark .language-card-description {
+        color: #cbd5e1;
+      }
+
       .brand-mark {
         position: relative;
         overflow: hidden;
@@ -792,138 +899,200 @@
             <div class="max-w-4xl">
               <h3 class="section-heading animate-on-scroll animate-delay text-3xl font-bold tracking-tight text-ink sm:text-4xl">🌍 Supported Languages</h3>
               <p class="mt-4 text-lg leading-8 text-slate-600">
-                CashWise supports English, Arabic, French, Spanish, German, Italian, Portuguese, Turkish, Russian, and Japanese.
+                 CashWise supports English, Arabic, French, Spanish, German, Italian, Portuguese, Turkish, Russian, Japanese, Chinese (Simplified), and Bahasa Indonesian.
               </p>
             </div>
-            <div class="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-              <article class="animate-card-on-scroll rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft">
-                <div class="flex items-center justify-between gap-3">
+            <div class="supported-language-grid mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <article class="language-card animate-card-on-scroll rounded-3xl border bg-white/90 p-6 shadow-soft">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">English</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise in English</h4>
+                    <p class="language-card-name">English</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise in English</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">EN</span>
+                  <span class="language-card-code rounded-full">EN</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise is a modern digital finance app designed to simplify money management. It helps you effortlessly track expenses, monitor recurring costs and instalments, set savings goals, and stay on top of your day‑to‑day balance — all with less friction and more clarity.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Track expenses, savings goals, and your daily balance with ease.</p>
+                  <p class="language-card-description">
+                    CashWise is a modern digital finance app designed to simplify money management. It helps you effortlessly track expenses, monitor recurring costs and instalments, set savings goals, and stay on top of your day-to-day balance - all with less friction and more clarity.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="ar" dir="rtl">
-                <div class="flex items-center justify-between gap-3">
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">AR</span>
+              <article class="language-card animate-card-on-scroll card-delay-1 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="ar" dir="rtl">
+                <div class="language-card-header">
+                  <span class="language-card-code rounded-full">AR</span>
                   <div class="text-right">
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">العربية</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise بالعربية</h4>
+                    <p class="language-card-name">العربية</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise بالعربية</h4>
                   </div>
                 </div>
-                <p class="mt-4 text-sm leading-8 text-slate-600">
-                  CashWise هو تطبيق مالي رقمي حديث مصمم لتبسيط إدارة الأموال. يساعدك على تتبع المصروفات بسهولة، ومراقبة التكاليف المتكررة والأقساط، وتحديد أهداف الادخار، والبقاء على اطلاع دائم برصيدك اليومي، وكل ذلك باحتكاك أقل ووضوح أكبر.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">تتبع المصروفات وأهداف الادخار ورصيدك اليومي بسهولة.</p>
+                  <p class="language-card-description">
+                    CashWise هو تطبيق مالي رقمي حديث مصمم لتبسيط إدارة الأموال. يساعدك على تتبع المصروفات بسهولة، ومراقبة التكاليف المتكررة والأقساط، وتحديد أهداف الادخار، والبقاء على اطلاع دائم برصيدك اليومي، وكل ذلك باحتكاك أقل ووضوح أكبر.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-2 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="fr">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll card-delay-2 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="fr">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Français</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise en français</h4>
+                    <p class="language-card-name">Français</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise en français</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">FR</span>
+                  <span class="language-card-code rounded-full">FR</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise est une application moderne de finance numérique conçue pour simplifier la gestion de l'argent. Elle vous aide à suivre facilement vos dépenses, à surveiller les coûts récurrents et les versements échelonnés, à définir des objectifs d'épargne et à garder le contrôle de votre solde au quotidien, avec moins de friction et plus de clarté.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Suivez vos dépenses, vos objectifs d'épargne et votre solde quotidien facilement.</p>
+                  <p class="language-card-description">
+                    CashWise est une application moderne de finance numérique conçue pour simplifier la gestion de l'argent. Elle vous aide à suivre facilement vos dépenses, à surveiller les coûts récurrents et les versements échelonnés, à définir des objectifs d'épargne et à garder le contrôle de votre solde au quotidien, avec moins de friction et plus de clarté.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-3 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="es">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll card-delay-3 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="es">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Español</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise en español</h4>
+                    <p class="language-card-name">Español</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise en español</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">ES</span>
+                  <span class="language-card-code rounded-full">ES</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise es una moderna aplicación digital de finanzas diseñada para simplificar la gestión del dinero. Te ayuda a controlar gastos con facilidad, supervisar costos recurrentes y pagos a plazos, fijar metas de ahorro y mantenerte al día con tu saldo diario, todo con menos fricción y más claridad.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Controla gastos, metas de ahorro y saldo diario con facilidad.</p>
+                  <p class="language-card-description">
+                    CashWise es una moderna aplicación digital de finanzas diseñada para simplificar la gestión del dinero. Te ayuda a controlar gastos con facilidad, supervisar costos recurrentes y pagos a plazos, fijar metas de ahorro y mantenerte al día con tu saldo diario, todo con menos fricción y más claridad.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="de">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll rounded-3xl border bg-white/90 p-6 shadow-soft" lang="de">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Deutsch</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise auf Deutsch</h4>
+                    <p class="language-card-name">Deutsch</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise auf Deutsch</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">DE</span>
+                  <span class="language-card-code rounded-full">DE</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise ist eine moderne digitale Finanz-App, die entwickelt wurde, um das Geldmanagement zu vereinfachen. Sie hilft Ihnen mühelos dabei, Ausgaben zu verfolgen, wiederkehrende Kosten und Ratenzahlungen zu überwachen, Sparziele festzulegen und Ihren täglichen Kontostand im Blick zu behalten - mit weniger Reibung und mehr Klarheit.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Verfolge Ausgaben, Sparziele und deinen Tagessaldo ganz einfach.</p>
+                  <p class="language-card-description">
+                    CashWise ist eine moderne digitale Finanz-App, die entwickelt wurde, um das Geldmanagement zu vereinfachen. Sie hilft Ihnen mühelos dabei, Ausgaben zu verfolgen, wiederkehrende Kosten und Ratenzahlungen zu überwachen, Sparziele festzulegen und Ihren täglichen Kontostand im Blick zu behalten - mit weniger Reibung und mehr Klarheit.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="it">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll card-delay-1 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="it">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Italiano</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise in italiano</h4>
+                    <p class="language-card-name">Italiano</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise in italiano</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">IT</span>
+                  <span class="language-card-code rounded-full">IT</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise è una moderna app digitale di finanza progettata per semplificare la gestione del denaro. Ti aiuta a monitorare con facilità le spese, controllare i costi ricorrenti e le rate, impostare obiettivi di risparmio e tenere sotto controllo il saldo quotidiano, tutto con meno attrito e maggiore chiarezza.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Monitora spese, obiettivi di risparmio e saldo quotidiano con facilità.</p>
+                  <p class="language-card-description">
+                    CashWise è una moderna app digitale di finanza progettata per semplificare la gestione del denaro. Ti aiuta a monitorare con facilità le spese, controllare i costi ricorrenti e le rate, impostare obiettivi di risparmio e tenere sotto controllo il saldo quotidiano, tutto con meno attrito e maggiore chiarezza.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-2 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="pt">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll card-delay-2 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="pt">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Português</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise em português</h4>
+                    <p class="language-card-name">Português</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise em português</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">PT</span>
+                  <span class="language-card-code rounded-full">PT</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise é um aplicativo moderno de finanças digitais projetado para simplificar a gestão do dinheiro. Ele ajuda você a acompanhar gastos com facilidade, monitorar custos recorrentes e parcelas, definir metas de poupança e manter o controle do saldo do dia a dia, tudo com menos atrito e mais clareza.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Acompanhe gastos, metas de poupança e saldo diário com facilidade.</p>
+                  <p class="language-card-description">
+                    CashWise é um aplicativo moderno de finanças digitais projetado para simplificar a gestão do dinheiro. Ele ajuda você a acompanhar gastos com facilidade, monitorar custos recorrentes e parcelas, definir metas de poupança e manter o controle do saldo do dia a dia, tudo com menos atrito e mais clareza.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-3 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="tr">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll card-delay-3 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="tr">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Türkçe</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise Türkçe</h4>
+                    <p class="language-card-name">Türkçe</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise Türkçe</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">TR</span>
+                  <span class="language-card-code rounded-full">TR</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise, para yönetimini kolaylaştırmak için tasarlanmış modern bir dijital finans uygulamasıdır. Harcamaları zahmetsizce takip etmenize, yinelenen maliyetleri ve taksitleri izlemenize, tasarruf hedefleri belirlemenize ve günlük bakiyenizi kontrol altında tutmanıza yardımcı olur; tüm bunları daha az sürtünme ve daha fazla netlikle sunar.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Harcamalari, tasarruf hedeflerini ve gunluk bakiyeni kolayca takip et.</p>
+                  <p class="language-card-description">
+                    CashWise, para yönetimini kolaylaştırmak için tasarlanmış modern bir dijital finans uygulamasıdır. Harcamaları zahmetsizce takip etmenize, yinelenen maliyetleri ve taksitleri izlemenize, tasarruf hedefleri belirlemenize ve günlük bakiyenizi kontrol altında tutmanıza yardımcı olur; tüm bunları daha az sürtünme ve daha fazla netlikle sunar.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="ru">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll rounded-3xl border bg-white/90 p-6 shadow-soft" lang="ru">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Русский</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise по-русски</h4>
+                    <p class="language-card-name">Русский</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise по-русски</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">RU</span>
+                  <span class="language-card-code rounded-full">RU</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWise - это современное цифровое финансовое приложение, созданное для упрощения управления деньгами. Оно помогает без лишних усилий отслеживать расходы, контролировать регулярные затраты и платежи в рассрочку, ставить цели по накоплениям и держать под контролем ежедневный баланс - все это с меньшим трением и большей ясностью.
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Легко отслеживайте расходы, цели сбережений и ежедневный баланс.</p>
+                  <p class="language-card-description">
+                    CashWise - это современное цифровое финансовое приложение, созданное для упрощения управления деньгами. Оно помогает без лишних усилий отслеживать расходы, контролировать регулярные затраты и платежи в рассрочку, ставить цели по накоплениям и держать под контролем ежедневный баланс - все это с меньшим трением и большей ясностью.
+                  </p>
+                </div>
               </article>
 
-              <article class="animate-card-on-scroll card-delay-1 rounded-3xl border border-[#d9c2ac] bg-white/90 p-6 shadow-soft" lang="ja">
-                <div class="flex items-center justify-between gap-3">
+              <article class="language-card animate-card-on-scroll card-delay-1 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="ja">
+                <div class="language-card-header">
                   <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">Nihongo</p>
-                    <h4 class="mt-2 text-xl font-bold text-ink">CashWise in Japanese</h4>
+                    <p class="language-card-name">日本語</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise 日本語</h4>
                   </div>
-                  <span class="rounded-full bg-[#f6e7d8] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#8b5e3c]">JA</span>
+                  <span class="language-card-code rounded-full">JA</span>
                 </div>
-                <p class="mt-4 text-sm leading-7 text-slate-600">
-                  CashWiseは、お金の管理をシンプルにするために設計されたモダンなデジタル金融アプリです。支出を簡単に追跡し、定期的なコストや分割払いを管理し、貯蓄目標を設定し、日々の残高を把握しやすくします。より少ない手間で、より高い明確さを得られます。
-                </p>
+                <div class="language-card-body">
+                  <p class="language-card-summary">支出、貯蓄目標、日々の残高を簡単に管理できます。</p>
+                  <p class="language-card-description">
+                    CashWiseは、お金の管理をシンプルにするために設計されたモダンなデジタル金融アプリです。支出を簡単に追跡し、定期的なコストや分割払いを管理し、貯蓄目標を設定し、日々の残高を把握しやすくします。より少ない手間で、より高い明確さを得られます。
+                  </p>
+                </div>
+              </article>
+
+              <article class="language-card animate-card-on-scroll card-delay-2 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="zh-Hans">
+                <div class="language-card-header">
+                  <div>
+                    <p class="language-card-name">简体中文</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise 简体中文</h4>
+                  </div>
+                  <span class="language-card-code rounded-full">ZH</span>
+                </div>
+                <div class="language-card-body">
+                  <p class="language-card-summary">轻松管理支出、储蓄目标和每日余额。</p>
+                  <p class="language-card-description">
+                    CashWise 是一款现代数字财务应用，旨在简化资金管理。它可以帮助你轻松追踪支出、监控经常性费用和分期付款、设定储蓄目标，并随时掌握每日余额，让财务管理更省力、更清晰。
+                  </p>
+                </div>
+              </article>
+
+              <article class="language-card animate-card-on-scroll card-delay-3 rounded-3xl border bg-white/90 p-6 shadow-soft" lang="id">
+                <div class="language-card-header">
+                  <div>
+                    <p class="language-card-name">Bahasa Indonesia</p>
+                    <h4 class="language-card-title text-xl font-bold text-ink">CashWise dalam Bahasa Indonesia</h4>
+                  </div>
+                  <span class="language-card-code rounded-full">ID</span>
+                </div>
+                <div class="language-card-body">
+                  <p class="language-card-summary">Kelola pengeluaran, target tabungan, dan saldo harian dengan lebih mudah.</p>
+                  <p class="language-card-description">
+                    CashWise adalah aplikasi keuangan digital modern yang dirancang untuk menyederhanakan pengelolaan uang. Aplikasi ini membantu Anda melacak pengeluaran dengan mudah, memantau biaya rutin dan cicilan, menetapkan target tabungan, serta tetap memahami saldo harian Anda dengan lebih sedikit hambatan dan lebih banyak kejelasan.
+                  </p>
+                </div>
               </article>
             </div>
           </div>
@@ -1015,7 +1184,7 @@
               </figure>
               <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
                 <img
-                  src="assets/images/02.jpg?v=20260603-1"
+                  src="assets/images/02.jpg?v=20260711-1"
                   alt="CashWise app screenshot 2"
                   class="h-full w-full object-contain bg-slate-50 p-2"
                   loading="lazy"
@@ -1071,7 +1240,7 @@
               </figure>
               <figure class="aspect-[9/16] overflow-hidden rounded-3xl border border-line bg-slate-50 shadow-soft">
                 <img
-                  src="assets/images/language.jpg"
+                  src="assets/images/language.jpg?v=20260711-1"
                   alt="Language selection screenshot"
                   class="h-full w-full object-contain bg-slate-50 p-2"
                   loading="lazy"
