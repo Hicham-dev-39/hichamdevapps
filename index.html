@@ -42,6 +42,7 @@
 
       body {
         font-family: "Inter", sans-serif;
+        min-height: 100vh;
         background:
           radial-gradient(circle at top left, rgba(255, 212, 156, 0.34), transparent 32%),
           linear-gradient(180deg, #ffe5b4 0%, #fff9f2 28%, #ffffff 100%);
@@ -346,6 +347,32 @@
       .theme-toggle:hover {
         transform: translateY(-1px);
         color: #2f2116;
+        border-color: rgba(139, 94, 60, 0.4);
+      }
+
+      #menu-toggle {
+        border-color: rgba(139, 94, 60, 0.22);
+        background: var(--brand-surface);
+        color: #8b5e3c;
+        transition: background-color 180ms ease, border-color 180ms ease;
+      }
+
+      #theme-toggle:focus-visible,
+      #menu-toggle:focus-visible {
+        outline: 2px solid rgba(169, 121, 86, 0.6);
+        outline-offset: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .js-ready .animate-on-scroll,
+        .js-ready .animate-card-on-scroll {
+          transition: none;
+          filter: none;
+        }
       }
 
       .theme-toggle svg {
@@ -650,6 +677,45 @@
         border-color: rgba(71, 85, 105, 0.75);
         background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.86));
         color: #f8fafc;
+      }
+
+      body.theme-dark #menu-toggle {
+        border-color: rgba(71, 85, 105, 0.85);
+        background: rgba(15, 23, 42, 0.7);
+        color: #f8dcc0;
+      }
+
+      body.theme-dark #mobile-menu {
+        border-color: rgba(51, 65, 85, 0.9);
+        background: rgba(15, 23, 42, 0.96);
+        box-shadow: 0 22px 55px -30px rgba(2, 6, 23, 0.9);
+      }
+
+      body.theme-dark #mobile-menu a {
+        color: #cbd5e1;
+      }
+
+      body.theme-dark #mobile-menu a:hover {
+        color: #fff4e7;
+      }
+
+      body.theme-dark .brand-title {
+        background: linear-gradient(135deg, #d6b08b 0%, #f0cfae 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      body.theme-dark .section-heading::after {
+        background: linear-gradient(90deg, #d6b08b 0%, #a97956 100%);
+      }
+
+      body.theme-dark :focus-visible {
+        outline-color: rgba(240, 207, 174, 0.7);
+      }
+
+      body.theme-dark .theme-toggle:hover {
+        color: #f0cfae;
+        border-color: rgba(214, 176, 139, 0.5);
       }
 
       body.theme-dark .theme-toggle .theme-icon-moon {
