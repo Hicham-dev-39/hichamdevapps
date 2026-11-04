@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service | CashWise: Track Money Wisely</title>
+    <meta
+      name="description"
+      content="Terms of Service for CashWise, the digital ledger and cash book app by Hicham-Dev."
+    />
+    <meta name="theme-color" content="#8b5e3c" />
+    <link rel="icon" type="image/png" href="assets/icons/playstore.png" />
+    <link rel="stylesheet" href="assets/styles/tailwind.css?v=20260524-1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --brand-gradient: linear-gradient(135deg, #8b5e3c 0%, #a97956 55%, #d6b08b 100%);
+        --brand-surface: linear-gradient(135deg, rgba(255, 249, 242, 0.98), rgba(255, 237, 210, 0.92));
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(255, 214, 168, 0.24), transparent 28%),
+          linear-gradient(180deg, #ffe5b4 0%, #fff9f2 24%, #ffffff 100%);
+      }
+
+      .display-font {
+        font-family: "Sora", "Inter", sans-serif;
+      }
+
+      .nav-shell {
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        background:
+          linear-gradient(135deg, rgba(255, 251, 247, 0.9), rgba(255, 243, 228, 0.78)),
+          linear-gradient(135deg, rgba(214, 176, 139, 0.18), rgba(255, 214, 168, 0.16));
+        box-shadow: 0 22px 55px -34px rgba(15, 23, 42, 0.45);
+      }
+
+      .brand-mark {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(139, 94, 60, 0.14);
+        background: linear-gradient(135deg, rgba(255, 250, 244, 0.98), rgba(255, 235, 207, 0.92));
+      }
+
+      .brand-title {
+        line-height: 1.05;
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .brand-subtitle {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #8a7463;
+      }
+
+      .appbar-nav {
+        border: 1px solid rgba(222, 200, 179, 0.9);
+        background: rgba(255, 251, 247, 0.74);
+      }
+
+      .appbar-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 9999px;
+        padding: 0.55rem 0.95rem;
+        color: #5b4938;
+        transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
+      }
+
+      .appbar-link:hover,
+      .appbar-link.is-active {
+        color: #8b5e3c;
+        background: rgba(255, 248, 240, 0.88);
+      }
+
+      .mobile-appbar-link {
+        border: 1px solid transparent;
+        background: linear-gradient(135deg, rgba(255, 249, 242, 0.96), rgba(247, 231, 213, 0.9));
+        transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(139, 94, 60, 0.14);
+        background: var(--brand-surface);
+        color: #8b5e3c;
+        transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+      }
+
+      .theme-toggle svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      .theme-toggle .theme-icon-sun {
+        display: none;
+      }
+
+      .page-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(139, 94, 60, 0.14);
+        background: linear-gradient(135deg, rgba(255, 249, 242, 0.98), rgba(255, 239, 220, 0.94));
+        padding: 0.45rem 0.9rem;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #8b5e3c;
+      }
+
+      .page-label::before {
+        content: "";
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #a97956, #8b5e3c);
+      }
+
+      .hero-panel,
+      .policy-card {
+        border: 1px solid rgba(222, 200, 179, 0.9);
+        background: rgba(255, 251, 247, 0.94);
+        box-shadow: 0 24px 55px -36px rgba(15, 23, 42, 0.35);
+      }
+
+      .hero-panel {
+        background:
+          linear-gradient(135deg, rgba(255, 251, 247, 0.98), rgba(255, 240, 219, 0.9)),
+          linear-gradient(135deg, rgba(214, 176, 139, 0.08), rgba(255, 214, 168, 0.09));
+      }
+
+      .effective-card {
+        border: 1px solid rgba(169, 121, 86, 0.22);
+        background: linear-gradient(135deg, rgba(255, 248, 240, 0.98), rgba(255, 234, 205, 0.92));
+      }
+
+      .policy-section + .policy-section {
+        border-top: 1px solid rgba(222, 200, 179, 0.95);
+        padding-top: 2rem;
+      }
+
+      .policy-heading {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .policy-number {
+        display: inline-flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        min-width: 3rem;
+        height: 3rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(139, 94, 60, 0.14);
+        background: linear-gradient(135deg, rgba(255, 245, 233, 0.98), rgba(247, 231, 213, 0.92));
+        font-size: 0.95rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        color: #8b5e3c;
+      }
+
+      .policy-heading-text {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.7rem;
+      }
+
+      .policy-heading-text::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 4rem;
+        height: 0.24rem;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #a97956 0%, #d6b08b 100%);
+      }
+
+      body.theme-dark {
+        color-scheme: dark;
+        background:
+          radial-gradient(circle at top left, rgba(169, 121, 86, 0.22), transparent 28%),
+          linear-gradient(180deg, #1f150f 0%, #2f2116 100%);
+        color: #e2e8f0;
+        --brand-surface: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
+      }
+
+      body.theme-dark .nav-shell,
+      body.theme-dark .appbar-nav,
+      body.theme-dark .brand-mark,
+      body.theme-dark .theme-toggle,
+      body.theme-dark .page-label,
+      body.theme-dark .hero-panel,
+      body.theme-dark .policy-card,
+      body.theme-dark .effective-card,
+      body.theme-dark footer {
+        border-color: rgba(71, 85, 105, 0.75) !important;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.86)) !important;
+        color: #e2e8f0;
+      }
+
+      body.theme-dark .appbar-link,
+      body.theme-dark .mobile-appbar-link {
+        color: #cbd5e1;
+      }
+
+      body.theme-dark .mobile-appbar-link,
+      body.theme-dark #menu-toggle,
+      body.theme-dark #mobile-menu {
+        border-color: rgba(51, 65, 85, 0.9) !important;
+        background: rgba(15, 23, 42, 0.92) !important;
+      }
+
+      body.theme-dark .brand-subtitle,
+      body.theme-dark p,
+      body.theme-dark li,
+      body.theme-dark .text-slate-600,
+      body.theme-dark .text-slate-500,
+      body.theme-dark .text-slate-700 {
+        color: #94a3b8 !important;
+      }
+
+      body.theme-dark h1,
+      body.theme-dark h2,
+      body.theme-dark strong,
+      body.theme-dark a,
+      body.theme-dark .text-slate-900 {
+        color: #f8fafc !important;
+      }
+
+      body.theme-dark .policy-section + .policy-section {
+        border-top-color: rgba(51, 65, 85, 0.9);
+      }
+
+      body.theme-dark .policy-number {
+        border-color: rgba(71, 85, 105, 0.75);
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.88));
+        color: #e0f2fe;
+      }
+
+      body.theme-dark .theme-toggle .theme-icon-moon {
+        display: none;
+      }
+
+      body.theme-dark .theme-toggle .theme-icon-sun {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800 antialiased">
+    <header class="sticky top-0 z-40 px-4 pt-4 sm:px-6 lg:px-8">
+      <div class="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-[1.75rem] px-4 py-3 backdrop-blur-xl sm:px-6">
+        <a href="index.html" class="flex items-center gap-3 text-slate-900">
+          <img src="assets/icons/playstore.png" alt="CashWise app icon" class="brand-mark h-10 w-10 rounded-2xl shadow-sm" />
+          <span class="flex flex-col">
+            <span class="brand-title display-font text-base font-extrabold tracking-tight sm:text-xl">CashWise</span>
+            <span class="brand-subtitle">Track Money Wisely</span>
+          </span>
+        </a>
+        <nav class="appbar-nav hidden items-center gap-2 rounded-full p-2 text-sm font-medium text-slate-600 md:flex">
+          <a href="index.html#features" class="appbar-link">Features</a>
+          <a href="index.html#pricing" class="appbar-link">Pricing</a>
+          <a href="privacy-policy.html" class="appbar-link">Privacy Policy</a>
+          <a href="terms-of-service.html" class="appbar-link is-active" aria-current="page">Terms of Service</a>
+          <a href="index.html#contact" class="appbar-link">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+            <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.752 15.002A9.718 9.718 0 0 1 18 15.75C12.615 15.75 8.25 11.385 8.25 6c0-1.33.266-2.599.748-3.752A9.753 9.753 0 1 0 21.75 15c0 .001 0 .001.002.002Z" />
+            </svg>
+            <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75ZM4.5 11.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h1.5Zm18 0a.75.75 0 0 1 0 1.5H21a.75.75 0 0 1 0-1.5h1.5ZM6.47 5.47a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06L6.47 6.53a.75.75 0 0 1 0-1.06Zm9.94 9.94a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06ZM18.53 5.47a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.94 9.94a.75.75 0 0 1 0 1.06l-1.06 1.06a.75.75 0 1 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0ZM12 6.75A5.25 5.25 0 1 1 6.75 12 5.256 5.256 0 0 1 12 6.75Z" />
+            </svg>
+          </button>
+        </div>
+        <button id="menu-toggle" type="button" class="inline-flex rounded-lg border border-slate-200 p-2 text-slate-700 md:hidden" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="mx-4 mt-2 hidden rounded-[1.5rem] border border-slate-200/80 bg-white/95 shadow-soft md:hidden sm:mx-6 lg:mx-8">
+        <div class="space-y-1 px-4 py-4 text-sm font-medium text-slate-700">
+          <a href="index.html#features" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Features</a>
+          <a href="index.html#pricing" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Pricing</a>
+          <a href="privacy-policy.html" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Privacy Policy</a>
+          <a href="terms-of-service.html" class="mobile-appbar-link is-active block rounded-xl px-3 py-2.5" aria-current="page">Terms of Service</a>
+          <a href="index.html#contact" class="mobile-appbar-link block rounded-xl px-3 py-2.5">Contact</a>
+          <a href="https://play.google.com/store/apps/details?id=com.hichamcashwise.finance.global" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-full bg-ocean px-4 py-3 text-center font-semibold text-white transition hover:bg-[#a97956]">Get it on Google Play</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <section class="hero-panel rounded-[2rem] p-6 sm:p-8">
+        <p class="page-label">Legal</p>
+        <h1 class="display-font mt-4 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">Terms of Service</h1>
+        <p class="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+          Welcome to CashWise. These Terms of Service govern your access to and use of the CashWise mobile application and related services provided by Hicham-Dev (&ldquo;Developer&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;). By downloading, accessing, or using CashWise, you agree to these Terms.
+        </p>
+        <div class="effective-card mt-6 rounded-2xl p-5 text-sm leading-7 text-[#5b4938]">
+          <strong>Effective Date:</strong> November 2026
+        </div>
+      </section>
+
+      <section class="policy-card mt-12 space-y-10 rounded-3xl p-6 sm:p-8">
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">01</span><span class="policy-heading-text">Acceptance of Terms</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            By using CashWise, you confirm that you have read, understood, and agree to be bound by these Terms of Service and our <a href="privacy-policy.html" class="font-semibold text-ocean underline underline-offset-4">Privacy Policy</a>.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">02</span><span class="policy-heading-text">Description of Service</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            CashWise is a personal finance and budgeting application that helps users track income, expenses, savings, budgets, and financial goals.
+          </p>
+          <p class="mt-4 leading-8 text-slate-600">
+            CashWise is not a bank, financial institution, investment advisor, lender, or brokerage service. The app does not hold, transfer, or manage users&rsquo; funds.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">03</span><span class="policy-heading-text">Eligibility</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            You must comply with applicable laws and platform requirements to use CashWise. Where required by law, parental consent may be necessary for minors.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">04</span><span class="policy-heading-text">User Accounts</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            You are responsible for maintaining the security of your account and any credentials used to access the service.
+          </p>
+          <p class="mt-4 leading-8 text-slate-600">
+            You agree to provide accurate information and not impersonate another person or entity.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">05</span><span class="policy-heading-text">Subscriptions and Payments</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">Some CashWise features require a premium subscription.</p>
+          <p class="mt-4 leading-8 text-slate-600">
+            All purchases and subscription payments are processed through Google Play and are subject to Google&rsquo;s billing terms.
+          </p>
+          <p class="mt-4 leading-8 text-slate-600">
+            Subscription renewals, cancellations, and refunds are handled according to Google Play policies.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">06</span><span class="policy-heading-text">Acceptable Use</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">You agree not to:</p>
+          <ul class="mt-4 list-disc space-y-3 pl-6 leading-8 text-slate-600">
+            <li>Use the service for unlawful purposes.</li>
+            <li>Attempt to gain unauthorized access to the service.</li>
+            <li>Interfere with app security or operation.</li>
+            <li>Reverse engineer, copy, or distribute the app except as permitted by law.</li>
+            <li>Use automated tools that may negatively affect service performance.</li>
+          </ul>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">07</span><span class="policy-heading-text">User Data</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">You retain ownership of the financial information you enter into CashWise.</p>
+          <p class="mt-4 leading-8 text-slate-600">
+            Your use of the service is also governed by our <a href="privacy-policy.html" class="font-semibold text-ocean underline underline-offset-4">Privacy Policy</a>, which explains how data is collected, used, and protected.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">08</span><span class="policy-heading-text">Advertisements</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            The free version of CashWise may display advertisements. Premium subscribers may access an ad-free experience where offered.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">09</span><span class="policy-heading-text">Intellectual Property</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            CashWise, including its design, branding, software, graphics, and content, is owned by Hicham-Dev and protected by applicable intellectual property laws.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">10</span><span class="policy-heading-text">Service Availability</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            We strive to maintain app availability but do not guarantee uninterrupted access. Features may be modified, suspended, or discontinued at any time.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">11</span><span class="policy-heading-text">Disclaimer</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">CashWise is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind.</p>
+          <p class="mt-4 leading-8 text-slate-600">
+            Financial information generated by the app is for organizational purposes only and should not be considered financial, legal, tax, or investment advice.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">12</span><span class="policy-heading-text">Limitation of Liability</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            To the maximum extent permitted by law, Hicham-Dev shall not be liable for indirect, incidental, special, consequential, or punitive damages resulting from the use of CashWise.
+          </p>
+          <p class="mt-4 leading-8 text-slate-600">
+            Users remain solely responsible for financial decisions made using information recorded in the app.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">13</span><span class="policy-heading-text">Termination</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            We reserve the right to suspend or terminate access to CashWise if these Terms are violated or if required by law.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">14</span><span class="policy-heading-text">Changes to These Terms</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">
+            We may update these Terms from time to time. Continued use of CashWise after updates constitutes acceptance of the revised Terms.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="policy-heading text-2xl font-bold text-slate-900"><span class="policy-number">15</span><span class="policy-heading-text">Contact</span></h2>
+          <p class="mt-4 leading-8 text-slate-600">If you have questions regarding these Terms, contact:</p>
+          <div class="effective-card mt-4 rounded-2xl p-5 leading-8 text-slate-700">
+            <p><strong>Developer:</strong> Hicham-Dev</p>
+            <p><strong>Email:</strong> <a href="mailto:hichamfriends23@gmail.com" class="font-semibold text-ocean underline underline-offset-4">hichamfriends23@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 py-8 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+        <p>&copy; 2026 Hicham-Dev. All rights reserved.</p>
+        <p class="max-w-4xl px-2 text-xs leading-6 text-slate-400 sm:px-6">
+          Disclaimer: CashWise is a software application designed solely for personal financial tracking, budgeting, and ledger management. We do not offer regulated financial services, lending, or investment products. CashWise does not take custody of, transfer, or hold user funds at any time. Any information provided by the app is for organizational purposes and does not constitute financial advice.
+        </p>
+        <div class="flex flex-col items-center gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5">
+          <a href="mailto:hichamfriends23@gmail.com" class="transition hover:text-slate-900">hichamfriends23@gmail.com</a>
+          <a href="privacy-policy.html" class="font-semibold text-ocean transition hover:text-[#a97956]">Privacy Policy</a>
+          <a href="index.html" class="font-semibold text-ocean transition hover:text-[#a97956]">Return to CashWise</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const themeStorageKey = "cashwise-theme";
+
+      function getPreferredTheme() {
+        const storedTheme = localStorage.getItem(themeStorageKey);
+        if (storedTheme === "light" || storedTheme === "dark") {
+          return storedTheme;
+        }
+
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      function applyTheme(theme) {
+        document.body.classList.toggle("theme-dark", theme === "dark");
+        document.documentElement.style.colorScheme = theme;
+        themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+        themeToggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+        themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      }
+
+      applyTheme(getPreferredTheme());
+
+      themeToggle.addEventListener("click", function () {
+        const nextTheme = document.body.classList.contains("theme-dark") ? "light" : "dark";
+        localStorage.setItem(themeStorageKey, nextTheme);
+        applyTheme(nextTheme);
+      });
+
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+        if (!localStorage.getItem(themeStorageKey)) {
+          applyTheme(getPreferredTheme());
+        }
+      });
+
+      menuToggle.addEventListener("click", function () {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+        mobileMenu.classList.toggle("hidden", isExpanded);
+      });
+    </script>
+  </body>
+</html>
