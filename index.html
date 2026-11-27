@@ -820,13 +820,13 @@
                 >
                   Download on Google Play
                 </a>
-                <button
+                <a
                   id="watch-video"
-                  type="button"
+                  href="#media-videos"
                   class="hero-secondary-cta inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-4 text-base font-semibold text-slate-700 transition hover:border-ocean hover:text-ocean"
                 >
-                  Watch Demo
-                </button>
+                  Watch Video tutorials
+                </a>
               </div>
               <p class="px-1 text-sm leading-7 text-slate-500">
                 Start free with one Cashbook. Unlock extra cards for a limited time by watching ads, or upgrade for unlimited access.
@@ -847,19 +847,32 @@
                   <span class="h-3 w-3 rounded-full bg-amber-400"></span>
                   <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
                 </div>
-                <div class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/70">
+                <div class="relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/70">
                   <video
-                    class="h-[420px] w-full object-cover object-top sm:h-[520px]"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
+                    id="hero-demo-video"
+                    class="h-[420px] w-full bg-slate-950 object-contain sm:h-[520px]"
                     controls
+                    playsinline
+                    preload="none"
                     poster="assets/images/04.jpg?v=20261106-1"
                   >
                     <source src="assets/videos/How%20to%20create%20a%20cashbook.mp4" type="video/mp4" />
                   </video>
+                  <button
+                    id="hero-demo-play"
+                    type="button"
+                    class="absolute inset-0 flex items-center justify-center bg-slate-950/25 transition hover:bg-slate-950/40 focus:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-white"
+                    aria-label="Play CashWise demo"
+                  >
+                    <span class="inline-flex items-center gap-3 rounded-full bg-white px-6 py-4 text-base font-semibold text-ink shadow-soft transition hover:scale-105">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M8.25 5.75a1 1 0 0 1 1.52-.85l9 5.5a1 1 0 0 1 0 1.7l-9 5.5a1 1 0 0 1-1.52-.85v-11Z" />
+                      </svg>
+                      Play demo
+                    </span>
+                  </button>
                 </div>
+                <p id="hero-demo-error" class="mt-3 hidden text-sm leading-6 text-rose-700" role="status" aria-live="polite"></p>
               </div>
             </div>
 
@@ -1716,7 +1729,10 @@
     <script>
       const menuToggle = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
-      const watchVideoButton = document.getElementById("watch-video");
+      const watchVideoLink = document.getElementById("watch-video");
+      const heroDemoVideo = document.getElementById("hero-demo-video");
+      const heroDemoPlayButton = document.getElementById("hero-demo-play");
+      const heroDemoError = document.getElementById("hero-demo-error");
       const themeToggle = document.getElementById("theme-toggle");
       const animatedHeadings = document.querySelectorAll(".animate-on-scroll");
       const animatedCards = document.querySelectorAll(".animate-card-on-scroll");
@@ -1735,17 +1751,17 @@
         document.body.classList.toggle("theme-dark", theme === "dark");
         document.documentElement.style.colorScheme = theme;
 
-        if (watchVideoButton) {
+        if (watchVideoLink) {
           if (theme === "dark") {
-            watchVideoButton.style.backgroundColor = "rgba(15, 23, 42, 0.92)";
-            watchVideoButton.style.color = "rgb(226, 232, 240)";
-            watchVideoButton.style.borderColor = "rgba(71, 85, 105, 0.9)";
-            watchVideoButton.style.backgroundImage = "none";
+            watchVideoLink.style.backgroundColor = "rgba(15, 23, 42, 0.92)";
+            watchVideoLink.style.color = "rgb(226, 232, 240)";
+            watchVideoLink.style.borderColor = "rgba(71, 85, 105, 0.9)";
+            watchVideoLink.style.backgroundImage = "none";
           } else {
-            watchVideoButton.style.backgroundColor = "rgb(255, 251, 247)";
-            watchVideoButton.style.color = "rgb(68, 50, 36)";
-            watchVideoButton.style.borderColor = "rgb(222, 200, 179)";
-            watchVideoButton.style.backgroundImage = "none";
+            watchVideoLink.style.backgroundColor = "rgb(255, 251, 247)";
+            watchVideoLink.style.color = "rgb(68, 50, 36)";
+            watchVideoLink.style.borderColor = "rgb(222, 200, 179)";
+            watchVideoLink.style.backgroundImage = "none";
           }
         }
 
@@ -1816,20 +1832,13 @@
         });
       });
 
-      watchVideoButton.addEventListener("click", function () {
-        const videoSection = document.getElementById("media-videos");
-        if (videoSection) {
-          videoSection.scrollIntoView({ behavior: "smooth", block: "start" });
-
-          const firstVideo = videoSection.querySelector("video");
-          if (!firstVideo) {
-            return;
-          }
-
-          firstVideo.play().catch(function () {
-            return undefined;
-          });
-        }
+      heroDemoPlayButton.addEventListener("click", function () {
+        heroDemoVideo.play().then(function () {
+          heroDemoPlayButton.classList.add("hidden");
+        }).catch(function () {
+          heroDemoError.textContent = "The demo could not be played. Try one of the video tutorials below.";
+          heroDemoError.classList.remove("hidden");
+        });
       });
     </script>
   </body>
